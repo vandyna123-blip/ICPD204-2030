@@ -50,21 +50,21 @@
                     <div>
                         <div class="flex items-center space-x-2">
                             <h1 class="text-xs sm:text-sm md:text-base font-extrabold leading-tight tracking-wide text-slate-100 khmer-moul">
-                                ប្រព័ន្ធគ្រប់គ្រង និងតាមដានរបាយការណ៍សកម្មភាពអនុវត្តក្របខណ្ឌយុទ្ធសាស្រ្តកម្ពុជា ២០២៤-២០៣០
+                                ប្រព័ន្ធគ្រប់គ្រង និងតាមដានវាយតម្លៃ ផែនការសកម្មភាពដើម្បីអនុវត្តក្របខ័ណ្ឌយុទ្ធសាស្រ្តកម្ពុជា ២០២៤-២០៣០ ខេត្តកំពង់ឆ្នាំង
                             </h1>
                             <span class="hidden lg:inline-block bg-teal-500/20 text-teal-300 text-[10px] px-2 py-0.5 rounded border border-teal-500/30 font-semibold font-mono">
                                 Template: ម៉ាទ្រីស(ICPD)_3.xlsx
                             </span>
                         </div>
                         <p class="text-[11px] sm:text-xs text-slate-300 font-medium mt-0.5">
-                            សម្របសម្រួល និងគ្រប់គ្រងដោយផ្ទាល់ដោយ៖ <span class="text-teal-400 font-bold">មន្ទីរផែនការខេត្តកំពង់ឆ្នាំង</span>
+                            សម្របសម្រួល និងគ្រប់គ្រងដោយផ្ទាល់ដោយ៖ <span class="text-teal-400 font-bold">មន្ទីរផែនការខេត្តកំពង់ឆ្នាំង និងជាក្រុមលេខាធិការដ្ឋានគណៈកម្មាធិការប្រជាជន និងអភិវឌ្ឍន៍ខេត្ត</span>
                         </p>
                     </div>
                 </div>
 
                 <!-- Secure Authentication Trigger Area -->
                 <div id="auth-area" class="flex items-center space-x-2.5">
-                    <!-- Dynamic auth state will be rendered here via JS -->
+                    <!-- Dynamic auth state rendered via JS -->
                 </div>
 
             </div>
@@ -85,7 +85,7 @@
                   <span id="role-badge-container" class="ml-2"></span>
               </div>
               <div class="flex items-center space-x-3 text-slate-300 font-mono text-[11px]">
-                  <span class="text-teal-400 font-bold font-mono">ទម្រង់បញ្ចូលទិន្នន័យផ្លូវការស្របតាម image_01a3dc.png</span>
+                  <span class="text-teal-400 font-bold font-mono">ទម្រង់បញ្ចូលទិន្នន័យថ្នាក់ជាតិ សម្របសម្រួលសន្ទស្សន៍សូចនាករយុទ្ធសាស្ត្រ</span>
               </div>
           </div>
         </div>
@@ -210,15 +210,15 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
-                        <button onclick="handleExportMockExcel()" class="flex items-center space-x-1.5 px-4 py-2 bg-teal-700 hover:bg-teal-800 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-teal-700/10 w-full justify-center md:w-auto">
-                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full md:w-auto">
+                        <button onclick="handleExportExcelFile()" class="flex items-center justify-center space-x-2 px-5 py-3 bg-[#0d6e67] hover:bg-[#0b5c56] text-white rounded-2xl text-xs font-black transition-all shadow-lg shadow-teal-900/20 border border-[#0d6e67] text-center min-w-[210px]">
+                            <svg class="w-4 h-4 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                             </svg>
-                            <span>ទាញយក Excel ម៉ាទ្រីស(ICPD)_3.xlsx</span>
+                            <span class="leading-tight">ទាញយក Excel ម៉ាទ្រីស(ICPD)_3.xlsx</span>
                         </button>
-                        <button onclick="resetToInitialActivities()" class="flex items-center space-x-1.5 px-3 py-2 border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-xl text-xs font-bold transition-all w-full justify-center md:w-auto" title="កំណត់ឡើងវិញ">
-                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <button onclick="resetToInitialActivities()" class="flex items-center justify-center space-x-1.5 px-4 py-2.5 border border-slate-300 hover:bg-slate-100 text-slate-700 bg-white rounded-xl text-xs font-bold transition-all" title="កំណត់ឡើងវិញ">
+                            <svg class="w-3.5 h-3.5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 4H15" />
                             </svg>
                             <span>Reset គំរូដើម</span>
@@ -444,7 +444,7 @@
 
             </div>
 
-            <!-- TAB 3: SMART DATA ENTRY FORM -->
+            <!-- TAB 3: SMART DATA ENTRY FORM (WITH DYNAMIC DEPENDENT DROPDOWNS) -->
             <div id="panel-input" class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 space-y-6 hidden">
                 
                 <div class="border-b border-slate-100 pb-4">
@@ -455,7 +455,7 @@
                         បន្ថែមសកម្មភាពថ្មី ទៅក្នុងម៉ាទ្រីសយោង ម៉ាទ្រីស(ICPD)_3.xlsx
                     </h2>
                     <p class="text-xs text-slate-500 mt-0.5">
-                        សូមបំពេញព័ត៌មានតាមលំដាប់ជួរឈរនៃតារាងផ្លូវការដែលបានបង្ហាញក្នុងរូបភាព <code>image_01a3dc.png</code>។
+                        សូមបំពេញព័ត៌មានតាមលំដាប់ជួរឈរនៃតារាងផ្លូវការដែលបានបង្ហាញក្នុងរូបភាព <code>image_01a3dc.png</code> និងជ្រើសរើសវិធានការគន្លឹះគាំទ្រ។
                     </p>
                 </div>
 
@@ -473,12 +473,26 @@
                 <form id="activity-entry-form" onsubmit="handleAddOrUpdateRow(event)" class="space-y-6">
                     <input type="hidden" id="form-editing-id" value="">
 
-                    <!-- Strategic Direction Dropdown -->
-                    <div>
-                        <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1.5">ទិសដៅយុទ្ធសាស្ត្រយោង</label>
-                        <select id="form-strategic-direction" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white">
-                            <!-- populated by script -->
-                        </select>
+                    <!-- Strategic Selection Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-slate-50/50 p-4 rounded-xl border border-slate-200/60">
+                        <!-- Strategic Direction Dropdown -->
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1.5">ទិសដៅយុទ្ធសាស្ត្រយោង *</label>
+                            <select id="form-strategic-direction" onchange="handleStrategicDirectionChange(this.value)" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white" required>
+                                <!-- populated by script -->
+                            </select>
+                        </div>
+
+                        <!-- Key Measure Dependent Dropdown (Highly requested addition) -->
+                        <div>
+                            <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1.5 flex items-center justify-between">
+                                <span>វិធានការគន្លឹះយោង *</span>
+                                <span class="text-[9px] bg-teal-100 text-teal-800 px-1.5 rounded uppercase font-extrabold font-mono">Dependent Dropdown</span>
+                            </label>
+                            <select id="form-key-measure" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white" required>
+                                <!-- populated dynamically according to SD selection -->
+                            </select>
+                        </div>
                     </div>
 
                     <!-- Activity and Indicator Fields -->
@@ -781,8 +795,8 @@
                                 </div>
 
                                 <div>
-                                    <label class="block text-[10px] font-bold text-slate-700 uppercase mb-1">វិធានការគន្លឹះយោង *</label>
-                                    <textarea id="sd-form-measure-kh" rows="4" placeholder="វាយបញ្ចូលវិធានការគន្លឹះយោងដែលត្រូវអនុវត្ត..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs leading-relaxed" required></textarea>
+                                    <label class="block text-[10px] font-bold text-slate-700 uppercase mb-1">វិធានការគន្លឹះចម្បងដំបូង *</label>
+                                    <textarea id="sd-form-measure-kh" rows="4" placeholder="វាយបញ្ចូលវិធានការគន្លឹះដំបូង..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-xs leading-relaxed" required></textarea>
                                 </div>
 
                                 <button type="submit" class="w-full py-2.5 bg-teal-600 hover:bg-teal-700 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-teal-600/10 flex items-center justify-center space-x-1.5">
@@ -801,7 +815,7 @@
                                     <svg class="w-4.5 h-4.5 mr-1.5 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                                     </svg>
-                                    រចនាសម្ព័ន្ធយុទ្ធសាស្ត្រ ICPD ទាំង៦ និងបន្ថែមថ្មី (<span id="admin-sd-total-badge">0</span>)
+                                    រចនាសម្ព័ន្ធយុទ្ធសាស្ត្រ ICPD ទាំង៦ និងការគ្រប់គ្រងវិធានការគន្លឹះ (<span id="admin-sd-total-badge">0</span>)
                                 </h3>
                                 <span class="text-[10px] text-slate-400 font-medium">កម្រិតសិទ្ធិ៖ <strong class="text-rose-600">Admin Only</strong></span>
                             </div>
@@ -811,7 +825,7 @@
                                     <thead>
                                         <tr class="bg-slate-50 text-slate-500 font-bold border-b border-slate-200 text-[10px] uppercase">
                                             <th class="py-2.5 px-2 w-16 text-center">ID</th>
-                                            <th class="py-2.5 px-3">ទិសដៅយុទ្ធសាស្ត្រ និងវិធានការគន្លឹះ</th>
+                                            <th class="py-2.5 px-3">ទិសដៅយុទ្ធសាស្ត្រ និងវិធានការគន្លឹះគាំទ្រ</th>
                                             <th class="py-2.5 px-2 w-24 text-center">ជម្រើស</th>
                                         </tr>
                                     </thead>
@@ -834,15 +848,15 @@
     <!-- FOOTER SECTION -->
     <footer class="bg-slate-900 text-slate-400 text-xs py-10 border-t border-slate-800 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
-            <p class="font-extrabold text-slate-300">
-                ប្រព័ន្ធគ្រប់គ្រងសូចនាករយុទ្ធសាស្ត្រ និងតារាងសកម្មភាពជាតិ ២០២៤-២០៣០ - គ្រប់គ្រងដោយមន្ទីរផែនការខេត្តកំពង់ឆ្នាំង
-            </p>
-            <p class="text-[11px] text-slate-500">
-                រចនាតម្រូវតាមទម្រង់ការងារ និងសន្លឹកកិច្ចការគំរូនៃឯកសារ <strong>ម៉ាទ្រីស(ICPD)_3.xlsx</strong> និងការណែនាំពីក្រឡាបញ្ជីក្នុងរូបភាព <strong>image_01a3dc.png</strong>
-            </p>
-            <div class="text-[10px] text-slate-600 font-mono mt-6">
-                &copy; ២០២៦ រក្សាសិទ្ធិគ្រប់យ៉ាងដោយមន្ទីរផែនការខេត្តកំពង់ឆ្នាំង
-            </div>
+          <p class="font-extrabold text-slate-300 text-sm">
+            ប្រព័ន្ធគ្រប់គ្រងសូចនាករយុទ្ធសាស្ត្រ និងតារាងសកម្មភាពជាតិ ២០២៤-២០៣០
+          </p>
+          <p class="text-[11px] text-slate-400">
+            សម្របសម្រួល និងវិភាគដោយផ្ទាល់ដោយ <strong>មន្ទីរផែនការខេត្តកំពង់ឆ្នាំង</strong> ស្របតាមសន្លឹកកិច្ចការគំរូនៃឯកសារ <code>ម៉ាទ្រីស(ICPD)_3.xlsx</code>
+          </p>
+          <div class="text-[10px] text-slate-600 font-mono mt-6">
+              &copy; ២០២៦ រក្សាសិទ្ធិគ្រប់យ៉ាងដោយមន្ទីរផែនការខេត្តកំពង់ឆ្នាំង
+          </div>
         </div>
     </footer>
 
@@ -867,22 +881,9 @@
                 </button>
             </div>
 
-            <!-- Modal Form Body -->
+            <!-- Modal Form Body (CLEANED - Test helper accounts block completely removed as requested) -->
             <form id="login-form" onsubmit="handleLoginSubmit(event)" class="p-6 space-y-4">
                 
-                <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/60 flex items-start space-x-2.5">
-                    <svg class="w-5 h-5 text-indigo-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <div class="text-[11px] text-slate-600 leading-relaxed font-semibold">
-                        <p class="text-slate-800 font-bold mb-1 border-b pb-0.5 text-xs">គណនីសាកល្បង៖</p>
-                        <p>• Admin: <strong class="text-indigo-900 font-mono">admin / 123</strong> (ឌន វណ្ណឌីណា)</p>
-                        <p>• ស្រុករលាប្អៀរ: <strong class="text-indigo-900 font-mono">roleapier / 111</strong></p>
-                        <p>• ក្រុងកំពង់ឆ្នាំង: <strong class="text-indigo-900 font-mono">kpchhnang / 555</strong></p>
-                        <p>• មន្ទីរកិច្ចការនារី: <strong class="text-indigo-900 font-mono">womendept / 222</strong></p>
-                    </div>
-                </div>
-
                 <div>
                     <label class="block text-[10px] font-bold text-slate-700 uppercase mb-1.5">ឈ្មោះគណនី (Username)</label>
                     <input id="login-username" type="text" placeholder="វាយបញ្ចូលឈ្មោះគណនី" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500 font-mono" required />
@@ -963,55 +964,40 @@
             "រដ្ឋបាលខេត្ត"
         ];
 
+        // Seed 6 Strategic Directions with Multiple Key Measures (Array format)
         const INITIAL_STRATEGIC_DIRECTIONS = [
             {
                 id: "SD1",
                 title: "ទិសដៅយុទ្ធសាស្ត្រទី ១ ៖ ពង្រឹងក្របខ័ណ្ឌគតិយុត្តិនិងស្ថាប័នតាមរយៈការជំរុញនិងការចូលរួមអនុវត្តច្បាប់និងលិខិតបទដ្ឋានគតិយុត្តិប្រកបដោយប្រសិទ្ធភាព ឆ្លើយតបទៅនឹងសកម្មភាពអាទិភាពនៃក្របខ័ណ្ឌយុទ្ធសាស្ត្រកម្ពុជា ។",
                 keyMeasures: [
-                    "វិធានការគន្លឹះទី១៖ ចូលរួមអនុវត្តយុទ្ធសាស្ត្រវិជ្ជមាន ផែនការសកម្មភាពសេដ្ឋកិច្ចថែទាំ ផែនការសកម្មភាពជាតិស្តីពីស្រ្តីសន្តិភាពនិងសន្តិសុខ ច្បាប់និងក្របខ័ណ្ឌច្បាប់ដែលទាក់ទងនឹងការកែលម្អសុខុមាលភាពរបស់ ជនរងគ្រោះ និងជនងាយរងគ្រោះ និងក្របខ័ណ្ឌច្បាប់ផ្សេងទៀតដែលគាំទ្រការផ្តល់សេវាដោះស្រាយទាន់ពេលវេលានិងមានប្រសិទ្ធភាពនៅថ្នាក់ក្រោមជាតិ ដល់ជនងាយរងគ្រោះរួមទាំងស្ត្រីនិងក្មេងស្រី។"
+                    "វិធានការគន្លឹះទី១.១៖ ចូលរួមអនុវត្តយុទ្ធសាស្ត្រវិជ្ជមាន ផែនការសកម្មភាពសេដ្ឋកិច្ចថែទាំ និងផែនការសកម្មភាពជាតិស្តីពីស្រ្តីសន្តិភាពនិងសន្តិសុខ។",
+                    "វិធានការគន្លឹះទី១.២៖ ពង្រឹងការយល់ដឹងលើច្បាប់កែលម្អសុខុមាលភាពរបស់ជនរងគ្រោះ និងជនងាយរងគ្រោះ រួមទាំងស្ត្រីនិងក្មេងស្រី។"
                 ]
             },
             {
                 id: "SD2",
                 title: "ទិសដៅយុទ្ធសាស្ត្រទី ២ ៖ បង្កើនការគ្របដណ្តប់ និងលើកកម្ពស់គុណភាពសេវាសុខភាពបន្តពូជ សុខភាពមាតា ទារក និងកុមារ ព្រមទាំងការរៀបចំផែនការគ្រួសារដោយស្ម័គ្រចិត្ត ដើម្បីឈានទៅសម្រេចបាននូវការស្លាប់របស់មាតាស្មើនឹងសូន្យ។",
                 keyMeasures: [
-                    "វិធានការគន្លឹះទី២៖ ពង្រឹងនិងពង្រីកសេវាថែទាំសុខភាពបន្តពូជ សេវាសម្ភពបន្ទាន់ សេវាពន្យារកំណើតទំនើប និងការផ្តល់ការអប់រំផ្សព្វផ្សាយនៅតាមមូលដ្ឋាន ជាពិសេសតំបន់ជនបទ និងជនងាយរងគ្រោះ។"
+                    "វិធានការគន្លឹះទី២.១៖ ពង្រឹងនិងពង្រីកសេវាថែទាំសុខភាពបន្តពូជ និងសម្ភពបន្ទាន់នៅតាមមូលដ្ឋានជនបទ។",
+                    "វិធានការគន្លឹះទី២.២៖ លើកកម្ពស់ការផ្តល់ការអប់រំផ្សព្វផ្សាយសេវាពន្យារកំណើតទំនើបដល់ជនងាយរងគ្រោះ។"
                 ]
             },
             {
                 id: "SD3",
                 title: "ទិសដៅយុទ្ធសាស្ត្រទី ៣ ៖ លុបបំបាត់រាល់ទម្រង់នៃអំពើហិង្សាផ្អែកលើយេនឌ័រ ការរើសអើង និងការអនុវត្តប្រកបដោយគ្រោះថ្នាក់នានា ប្រឆាំងនឹងស្ត្រី និងក្មេងស្រី ដើម្បីកសាងសង្គមប្រកបដោយសមធម៌ សន្តិភាព និងបរិយាបន្ន។",
                 keyMeasures: [
-                    "វិធានការគន្លឹះទី៣៖ ពង្រឹងការឆ្លើយតបអន្តរវិស័យ ច្បាប់ស្តីពីការទប់ស្កាត់អំពើហិង្សាក្នុងគ្រួសារ និងការការពារជនរងគ្រោះ និងការលើកកម្ពស់តួនាទីយេនឌ័រក្នុងកម្រិតធ្វើសេចក្តីសម្រេចចិត្ត។"
-                ]
-            },
-            {
-                id: "SD4",
-                title: "ទិសដៅយុទ្ធសាស្ត្រទី ៤ ៖ វិនិយោគលើការអប់រំ ការកសាងសមត្ថភាព ជំនាញវិជ្ជាជីវៈ និងការផ្តល់សេវាសុខភាពយុវវ័យ ប្រកបដោយគុណភាព ដើម្បីទាញយកភាគលាភប្រជាសាស្ត្រ។",
-                keyMeasures: [
-                    "វិធានការគន្លឹះទី៤៖ ជំរុញការបញ្ចូលការអប់រំសុខភាពបន្តពូជ និងការសិក្សាសិក្សាលម្អិតផ្នែកយេនឌ័រទៅក្នុងកម្មវិធីសិក្សា និងការបង្កើតមជ្ឈមណ្ឌលយុវជនសម្រាប់ការបណ្តុះបណ្តាល និងប្រឹក្សាយោបល់។"
-                ]
-            },
-            {
-                id: "SD5",
-                title: "ទិសដៅយុទ្ធសាស្ត្រទី ៥ ៖ កែលម្អគុណភាព និងការទទួលបានទិន្នន័យប្រជាសាស្ត្រ ប្រព័ន្ធស្ថិតិវិវឌ្ឍនប្រជាជនដែលមានភាពជាក់លាក់ខ្ពស់ និងការបំបែកទិន្នន័យ ដើម្បីធានាបាននូវការរៀបចំគោលនយោបាយប្រកបដោយសមធម៌។",
-                keyMeasures: [
-                    "វិធានការគន្លឹះទី៥៖ ពង្រឹងសមត្ថភាពប្រព័ន្ធចុះបញ្ជីអត្រានុកូលដ្ឋាន ប្រព័ន្ធស្ថិតិប្រជាសាស្ត្រ និងការប្រើប្រាស់បច្ចេកវិទ្យាឌីជីថលក្នុងការគ្រប់គ្រង និងការចងក្រងទិន្នន័យនៅថ្នាក់ក្រោមជាតិ។"
-                ]
-            },
-            {
-                id: "SD6",
-                title: "ទិសដៅយុទ្ធសាស្ត្រទី ៦ ៖ បង្កើន និងកៀងគរធនធានហិរញ្ញវត្ថុពីគ្រប់ប្រភព រួមទាំងការប្រើប្រាស់ថវិកាជាតិ និងការបង្កើតភាពជាដៃគូពហុភាគីជាមួយដៃគូអភិវឌ្ឍន៍ ដើម្បីធានានិរន្តរភាព។",
-                keyMeasures: [
-                    "វិធានការគន្លឹះទី៦៖ បញ្ជ្រាបផែនការសកម្មភាព ICPD ទៅក្នុងកម្មវិធីវិនិយោគបីឆ្នាំរំកិល និងផែនការថវិការបស់រដ្ឋបាលថ្នាក់ក្រោមជាតិ ព្រមទាំងការជំរុញយន្តការសហការរវាងរដ្ឋ និងដៃគូអភិវឌ្ឍន៍"
+                    "វិធានការគន្លឹះទី៣.១៖ ពង្រឹងការឆ្លើយតបអន្តរវិស័យ និងការការពារជនរងគ្រោះតាមរយៈច្បាប់ទប់ស្កាត់អំពើហិង្សា។",
+                    "វិធានការគន្លឹះទី៣.២៖ លើកកម្ពស់តួនាទីយេនឌ័រក្នុងកម្រិតធ្វើសេចក្តីសម្រេចចិត្តនៅថ្នាក់មូលដ្ឋាន។"
                 ]
             }
         ];
 
+        // Seed initial Activities referencing specific Strategic Directions and specific Key Measures
         const INITIAL_ACTIVITIES = [
             {
                 id: "ACT-001",
                 strategicDirectionId: "SD1",
+                keyMeasure: "វិធានការគន្លឹះទី១.១៖ ចូលរួមអនុវត្តយុទ្ធសាស្ត្រវិជ្ជមាន ផែនការសកម្មភាពសេដ្ឋកិច្ចថែទាំ និងផែនការសកម្មភាពជាតិស្តីពីស្រ្តីសន្តិភាពនិងសន្តិសុខ។",
                 activityKh: "ចូលរួមអនុវត្តយុទ្ធសាស្ត្រវិជ្ជមាន ផែនការសកម្មភាពសេដ្ឋកិច្ចថែទាំ ផែនការសកម្មភាពជាតិស្តីពីស្រ្តីសន្តិភាពនិងសន្តិសុខ និងគាំទ្រសេវាដោះស្រាយទាន់ពេល",
                 indicatorKh: "ចំនួនស្ត្រី និងក្មេងស្រីងាយរងគ្រោះទទួលបានសេវាគាំពារសង្គម និងកិច្ចសង្គ្រោះផ្នែកច្បាប់ទាន់ពេលវេលា និងមានប្រសិទ្ធភាព",
                 coordinatingDept: "មន្ទីរកិច្ចការនារី",
@@ -1019,7 +1005,7 @@
                 baselineVal: "៥,០០០ (២០២៥)",
                 totalTarget: "២៥,០០០",
                 y2026: "៧,០០០",
-                y2027: "១០,០០0",
+                y2027: "១០,០០០",
                 y2028: "១៤,០០០",
                 y2029: "១៩,០០០",
                 y2030: "២៥,០០០",
@@ -1033,6 +1019,7 @@
             {
                 id: "ACT-002",
                 strategicDirectionId: "SD1",
+                keyMeasure: "វិធានការគន្លឹះទី១.២៖ ពង្រឹងការយល់ដឹងលើច្បាប់កែលម្អសុខុមាលភាពរបស់ជនរងគ្រោះ និងជនងាយរងគ្រោះ រួមទាំងស្ត្រីនិងក្មេងស្រី។",
                 activityKh: "រៀបចំវគ្គបណ្តុះបណ្តាល និងពង្រឹងសមត្ថភាពដល់អាជ្ញាធរមូលដ្ឋាន លើច្បាប់ការពារស្ត្រី និងទប់ស្កាត់អំពើហិង្សា",
                 indicatorKh: "ចំនួនមន្ត្រីឃុំ សង្កាត់ និងសមត្ថកិច្ចមូលដ្ឋាន ដែលបានឆ្លងកាត់ការបណ្តុះបណ្តាលក្របខ័ណ្ឌច្បាប់ការពារ",
                 coordinatingDept: "មន្ទីរកិច្ចការនារី",
@@ -1054,6 +1041,7 @@
             {
                 id: "ACT-003",
                 strategicDirectionId: "SD2",
+                keyMeasure: "វិធានការគន្លឹះទី២.១៖ ពង្រឹងនិងពង្រីកសេវាថែទាំសុខភាពបន្តពូជ និងសម្ភពបន្ទាន់នៅតាមមូលដ្ឋានជនបទ។",
                 activityKh: "ពង្រីកការផ្តល់សេវាថែទាំសុខភាពបន្តពូជចល័ត និងការពិនិត្យផ្ទៃពោះដោយឥតគិតថ្លៃនៅតំបន់ដាច់ស្រយាល និងសហគមន៍ជនងាយរងគ្រោះ",
                 indicatorKh: "ចំនួនស្ត្រីមានផ្ទៃពោះដែលបានទទួលការពិនិត្យសុខភាពសម្ភពចល័តយ៉ាងហោចណាស់ ៤ដង",
                 coordinatingDept: "មន្ទីរសុខាភិបាល",
@@ -1077,13 +1065,10 @@
         const INITIAL_USERS_DB = [
             { id: "U-001", name: "ឌន វណ្ណឌីណា", role: "admin", entity: "មន្ទីរផែនការខេត្តកំពង់ឆ្នាំង", district: "ទូទាំងខេត្ត", department: "មន្ទីរផែនការ", username: "admin", password: "123", status: "active", note: "គណនីអ្នកគ្រប់គ្រងប្រព័ន្ធជាន់ខ្ពស់ (មន្ទីរផែនការ)" },
             { id: "U-002", name: "អ៊ឹម សារឿន", role: "district", entity: "រដ្ឋបាលស្រុករលាប្អៀរ", district: "ស្រុករលាប្អៀរ", department: "គ្រប់វិស័យមូលដ្ឋាន", username: "roleapier", password: "111", status: "active", note: "គណនីមន្ត្រីរដ្ឋបាលស្រុករលាប្អៀរ" },
-            { id: "U-003", name: "លោកស្រី ម៉ែន សុភី", role: "department", entity: "មន្ទីរកិច្ចការនារីខេត្តកំពង់ឆ្នាំង", district: "ទូទាំងខេត្ត", department: "មន្ទីរកិច្ចការនារី", username: "womendept", password: "222", status: "active", note: "គណនីមន្ត្រីបង្គោលមន្ទីរកិច្ចការនារី" },
-            { id: "U-004", name: "លោក សុខ ផល្លា", role: "department", entity: "មន្ទីរសុខាភិបាលខេត្តកំពង់ឆ្នាំង", district: "ទូទាំងខេត្ត", department: "មន្ទីរសុខាភិបាល", username: "healthdept", password: "333", status: "active", note: "គណនីមន្ត្រីបង្គោលមន្ទីរសុខាភិបាល" },
-            { id: "U-005", name: "លោក ឡាយ គីមស្រ៊ុន", role: "district", entity: "រដ្ឋបាលស្រុកបរិបូណ៌", district: "ស្រុកបរិបូណ៌", department: "គ្រប់វិស័យមូលដ្ឋាន", username: "boribor", password: "444", status: "active", note: "គណនីមន្ត្រីរដ្ឋបាលស្រុកបរិបូណ៌" },
-            { id: "U-006", name: "លោក ឃួន សៅរ៉េត", role: "district", entity: "រដ្ឋបាលក្រុងកំពង់ឆ្នាំង", district: "ក្រុងកំពង់ឆ្នាំង", department: "គ្រប់វិស័យមូលដ្ឋាន", username: "kpchhnang", password: "555", status: "active", note: "គណនីមន្ត្រីរដ្ឋបាលក្រុងកំពង់ឆ្នាំង" }
+            { id: "U-003", name: "លោកស្រី ម៉ែន សុភី", role: "department", entity: "មន្ទីរកិច្ចការនារីខេត្តកំពង់ឆ្នាំង", district: "ទូទាំងខេត្ត", department: "មន្ទីរកិច្ចការនារី", username: "womendept", password: "222", status: "active", note: "គណនីមន្ត្រីបង្គោលមន្ទីរកិច្ចការនារី" }
         ];
 
-        // --- GLOBAL VARIABLES ---
+        // --- GLOBAL STATE ---
         let activities = [];
         let strategicDirections = [];
         let usersDb = [];
@@ -1094,7 +1079,7 @@
 
         // --- INITIALIZATION ---
         window.onload = function() {
-            // Load from storage
+            // Load and hydrate database states from localStorage
             const savedActivities = localStorage.getItem('kampong_chhnang_icpd_activities');
             if (savedActivities) {
                 activities = JSON.parse(savedActivities);
@@ -1106,21 +1091,8 @@
             const savedSDs = localStorage.getItem('kampong_chhnang_icpd_sds');
             if (savedSDs) {
                 strategicDirections = JSON.parse(savedSDs);
-                // Migrate legacy keyMeasure string to keyMeasures array if necessary
-                strategicDirections.forEach(sd => {
-                    if (sd.keyMeasure && !sd.keyMeasures) {
-                        sd.keyMeasures = [sd.keyMeasure];
-                        delete sd.keyMeasure;
-                    } else if (!sd.keyMeasures) {
-                        sd.keyMeasures = [];
-                    }
-                });
             } else {
-                strategicDirections = INITIAL_STRATEGIC_DIRECTIONS.map(sd => ({
-                    id: sd.id,
-                    title: sd.title,
-                    keyMeasures: sd.keyMeasures || []
-                }));
+                strategicDirections = [...INITIAL_STRATEGIC_DIRECTIONS];
                 saveStrategicDirections();
             }
 
@@ -1172,6 +1144,7 @@
             document.getElementById('activity-count-badge').textContent = activities.length;
         }
 
+        // --- AUTHENTICATION TEMPLATE UI ---
         function renderHeaderAuth() {
             const authArea = document.getElementById('auth-area');
             if (currentUser.role === 'guest') {
@@ -1265,7 +1238,7 @@
             deptSelect.innerHTML = deptFilters.map(d => `<option value="${d}">${d === 'all' ? 'គ្រប់មន្ទីរ/ស្ថាប័នសម្របសម្រួល' : d}</option>`).join('');
         }
 
-        // --- TAB SWITCHER ---
+        // --- TAB CONTROL ---
         function switchTab(tabId) {
             activeTab = tabId;
             
@@ -1321,6 +1294,7 @@
             });
         }
 
+        // --- SPREADSHEET TABLE GRID ENGINE (WITH KEY MEASURES GROUPING) ---
         function renderActivitiesGrid() {
             const tbody = document.getElementById('spreadsheet-tbody');
             const filtered = getFilteredActivities();
@@ -1331,119 +1305,120 @@
             strategicDirections.forEach(sd => {
                 const sdActivities = filtered.filter(act => act.strategicDirectionId === sd.id);
 
-                // Strategic Direction banner row
+                // 1. Strategic Direction Banner Header Row
                 htmlContent += `
-                    <tr class="bg-[#eef2f5] font-extrabold text-teal-900 border-y border-slate-300">
-                        <td colspan="13" class="py-3.5 px-4 text-xs font-bold leading-relaxed text-left">
-                            <span class="bg-teal-700 text-white text-[9px] px-2 py-0.5 rounded-md mr-2">យុទ្ធសាស្ត្រ</span>
+                    <tr class="bg-[#1e293b] text-white border-y border-slate-300 font-extrabold">
+                        <td colspan="13" class="py-3 px-4 text-[11px] leading-relaxed text-left">
+                            <span class="bg-teal-600 text-white text-[9px] px-2 py-0.5 rounded mr-2 font-bold uppercase tracking-wider">ទិសដៅយុទ្ធសាស្ត្រ ${sd.id}</span>
                             ${sd.title}
                         </td>
                     </tr>
                 `;
 
-                // Render all key measures assigned to this SD
+                // Loop through this Strategic Direction's multiple Key Measures (Array format)
                 if (sd.keyMeasures && sd.keyMeasures.length > 0) {
-                    sd.keyMeasures.forEach((measure, mIdx) => {
+                    sd.keyMeasures.forEach((measure, measureIdx) => {
+                        // Filter activities mapped to this specific Key Measure
+                        const measureActivities = sdActivities.filter(act => act.keyMeasure === measure);
+
+                        // 2. Render Key Measure Header Row
                         htmlContent += `
-                            <tr class="bg-amber-50/40 text-slate-800 font-semibold border-b border-slate-200 italic">
-                                <td colspan="13" class="py-2.5 px-4 text-[11px] leading-relaxed text-left pl-6">
-                                    <span class="bg-amber-600 text-white not-italic text-[9px] px-1.5 py-0.5 rounded-md mr-2 font-bold">វិធានការគន្លឹះ ${mIdx + 1}</span>
+                            <tr class="bg-amber-50 text-slate-800 border-b border-slate-300 italic font-bold">
+                                <td colspan="13" class="py-2.5 px-6 text-[11px] leading-relaxed text-left border-l-4 border-amber-500">
+                                    <span class="bg-amber-600 text-white not-italic text-[9px] px-2 py-0.5 rounded mr-2 font-black uppercase">វិធានការគន្លឹះ ${sd.id}.${measureIdx + 1}</span>
                                     ${measure}
                                 </td>
                             </tr>
                         `;
+
+                        // 3. Render Activities mapped to this specific Key Measure
+                        if (measureActivities.length > 0) {
+                            measureActivities.forEach(act => {
+                                htmlContent += `
+                                    <tr class="hover:bg-teal-50/20 transition-all text-slate-700 bg-white">
+                                        
+                                        <!-- Activity -->
+                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'activityKh', this)" class="py-3 px-3 border-r border-slate-200 text-left align-top font-bold text-slate-800 text-[11px] cursor-pointer hover:bg-teal-50/30">
+                                            <div>
+                                                <span>${act.activityKh}</span>
+                                                <div class="mt-1 flex flex-wrap gap-1">
+                                                    <span class="text-[9px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono font-bold">ID: ${act.id}</span>
+                                                    <span class="text-[9px] bg-sky-50 text-sky-700 px-1.5 py-0.5 rounded font-bold font-mono">ដែនដី៖ ${act.district}</span>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                        <!-- Indicator -->
+                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'indicatorKh', this)" class="py-3 px-3 border-r border-slate-200 text-left align-top text-[11px] cursor-pointer hover:bg-teal-50/30 text-slate-600 leading-relaxed">
+                                            <span>${act.indicatorKh}</span>
+                                        </td>
+
+                                        <!-- Coordinating Department -->
+                                        <td class="py-3 px-3 border-r border-slate-200 align-top text-left font-semibold text-slate-700 text-[10.5px]">
+                                            ${act.coordinatingDept}
+                                        </td>
+
+                                        <!-- Unit -->
+                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'unitKh', this)" class="py-3 px-1 border-r border-slate-200 text-center align-top text-[11px] cursor-pointer hover:bg-teal-50/30">
+                                            <span class="bg-slate-100 px-1.5 py-0.5 rounded text-slate-600 font-bold">${act.unitKh}</span>
+                                        </td>
+
+                                        <!-- Baseline -->
+                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'baselineVal', this)" class="py-3 px-1 border-r border-slate-200 text-center align-top text-[11px] text-slate-500 cursor-pointer hover:bg-teal-50/30">
+                                            <span>${act.baselineVal || "-"}</span>
+                                        </td>
+
+                                        <!-- Total target -->
+                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'totalTarget', this)" class="py-3 px-1 border-r border-slate-200 text-center align-top font-extrabold text-slate-900 text-[11px] cursor-pointer hover:bg-teal-50/30">
+                                            <span>${act.totalTarget}</span>
+                                        </td>
+
+                                        <!-- Milestone targets -->
+                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2026', this)" class="py-3 px-0.5 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/30">${act.y2026 || "-"}</td>
+                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2027', this)" class="py-3 px-0.5 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/30">${act.y2027 || "-"}</td>
+                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2028', this)" class="py-3 px-0.5 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/30">${act.y2028 || "-"}</td>
+                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2029', this)" class="py-3 px-0.5 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/30">${act.y2029 || "-"}</td>
+                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2030', this)" class="py-3 px-0.5 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/30">${act.y2030 || "-"}</td>
+
+                                        <!-- Estimated cost in Million Riels -->
+                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'estimatedCostMillionRiels', this)" class="py-3 px-3 border-r border-slate-200 text-right align-top font-extrabold text-teal-800 text-[11px] cursor-pointer hover:bg-teal-50/30 bg-teal-50/10">
+                                            <span>${parseFloat(act.estimatedCostMillionRiels || 0).toLocaleString()} លាន</span>
+                                        </td>
+
+                                        <!-- Options column -->
+                                        <td class="py-3 px-2 text-center align-top">
+                                            <div class="flex items-center justify-center space-x-1">
+                                                <button onclick="handleEditRowForm('${act.id}')" class="p-1 hover:bg-teal-50 text-slate-400 hover:text-teal-700 rounded transition-all" title="កែសម្រួលលម្អិត">
+                                                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                    </svg>
+                                                </button>
+                                                <button onclick="handleDeleteRow('${act.id}')" class="p-1 hover:bg-rose-50 text-slate-400 hover:text-rose-700 rounded transition-all" title="លុប">
+                                                    <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                `;
+                            });
+                        } else {
+                            htmlContent += `
+                                <tr class="bg-slate-50/50">
+                                    <td colspan="13" class="py-3 px-6 text-slate-400 italic text-[10px] text-left">
+                                        (មិនទាន់មានសកម្មភាពត្រូវបានបញ្ចូលគាំទ្រវិធានការគន្លឹះនេះនៅឡើយទេ)
+                                    </td>
+                                </tr>
+                            `;
+                        }
                     });
                 } else {
                     htmlContent += `
-                        <tr class="bg-amber-50/20 text-slate-400 border-b border-slate-200 italic">
-                            <td colspan="13" class="py-2 px-4 text-[11px] text-left pl-6">
-                                <em>(មិនទាន់មានវិធានការគន្លឹះត្រូវបានបញ្ចូលនៅឡើយទេ)</em>
-                            </td>
-                        </tr>
-                    `;
-                }
-
-                if (sdActivities.length > 0) {
-                    sdActivities.forEach(act => {
-                        htmlContent += `
-                            <tr class="hover:bg-slate-50/50 transition-all text-slate-700">
-                                
-                                <!-- 1. Activity -->
-                                <td ondoubleclick="handleStartInlineEdit('${act.id}', 'activityKh', this)" class="py-3.5 px-3 border-r border-slate-200 text-left align-top font-bold text-slate-800 text-[11.5px] cursor-pointer hover:bg-teal-50/40">
-                                    <div>
-                                        <span>${act.activityKh}</span>
-                                        <div class="mt-1 flex flex-wrap gap-1.5">
-                                            <span class="text-[9px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono font-bold">ID: ${act.id}</span>
-                                            <span class="text-[9px] bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded font-bold font-mono">រដ្ឋបាល៖ ${act.district}</span>
-                                        </div>
-                                    </div>
-                                </td>
-
-                                <!-- 2. Indicator -->
-                                <td ondoubleclick="handleStartInlineEdit('${act.id}', 'indicatorKh', this)" class="py-3.5 px-3 border-r border-slate-200 text-left align-top text-[11px] cursor-pointer hover:bg-teal-50/40">
-                                    <span class="text-slate-600 leading-relaxed">${act.indicatorKh}</span>
-                                </td>
-
-                                <!-- 3. Coordinating Dept -->
-                                <td class="py-3.5 px-3 border-r border-slate-200 align-top text-left font-semibold text-slate-700 text-[11px]">
-                                    ${act.coordinatingDept}
-                                </td>
-
-                                <!-- 4. Unit -->
-                                <td ondoubleclick="handleStartInlineEdit('${act.id}', 'unitKh', this)" class="py-3.5 px-1 border-r border-slate-200 text-center align-top text-[11px] cursor-pointer hover:bg-teal-50/40">
-                                    <span class="bg-slate-100 px-2 py-0.5 rounded text-slate-600 font-bold">${act.unitKh}</span>
-                                </td>
-
-                                <!-- 5. Baseline -->
-                                <td ondoubleclick="handleStartInlineEdit('${act.id}', 'baselineVal', this)" class="py-3.5 px-2 border-r border-slate-200 text-center align-top text-[11px] text-slate-500 cursor-pointer hover:bg-teal-50/40">
-                                    <span>${act.baselineVal || "-"}</span>
-                                </td>
-
-                                <!-- 6. Total target -->
-                                <td ondoubleclick="handleStartInlineEdit('${act.id}', 'totalTarget', this)" class="py-3.5 px-2 border-r border-slate-200 text-center align-top font-bold text-slate-900 text-[11.5px] cursor-pointer hover:bg-teal-50/40">
-                                    <span>${act.totalTarget}</span>
-                                </td>
-
-                                <!-- Year targets -->
-                                <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2026', this)" class="py-3.5 px-1 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/40">${act.y2026 || "-"}</td>
-                                <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2027', this)" class="py-3.5 px-1 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/40">${act.y2027 || "-"}</td>
-                                <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2028', this)" class="py-3.5 px-1 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/40">${act.y2028 || "-"}</td>
-                                <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2029', this)" class="py-3.5 px-1 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/40">${act.y2029 || "-"}</td>
-                                <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2030', this)" class="py-3.5 px-1 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/40">${act.y2030 || "-"}</td>
-
-                                <!-- Estimated Cost -->
-                                <td ondoubleclick="handleStartInlineEdit('${act.id}', 'estimatedCostMillionRiels', this)" class="py-3.5 px-3 border-r border-slate-200 text-right align-top font-extrabold text-teal-800 text-[11.5px] cursor-pointer hover:bg-teal-50/40 bg-teal-50/10">
-                                    <span>${parseFloat(act.estimatedCostMillionRiels || 0).toLocaleString()} លាន</span>
-                                </td>
-
-                                <!-- Action Buttons -->
-                                <td class="py-3.5 px-2 text-center align-top">
-                                    <div class="flex items-center justify-center space-x-1.5">
-                                        <button onclick="handleEditRowForm('${act.id}')" class="p-1 hover:bg-teal-50 text-slate-500 hover:text-teal-700 rounded transition-all" title="កែសម្រួលលម្អិត">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                            </svg>
-                                        </button>
-                                        <button onclick="handleDeleteRow('${act.id}')" class="p-1 hover:bg-rose-50 text-slate-500 hover:text-rose-700 rounded transition-all" title="លុប">
-                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </td>
-
-                            </tr>
-                        `;
-                    });
-                } else {
-                    htmlContent += `
-                        <tr>
-                            <td colspan="13" class="py-12 text-center bg-slate-50/30">
-                                <svg class="w-12 h-12 text-slate-300 mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <h4 class="font-extrabold text-slate-700">គ្មានទិន្នន័យត្រូវបានកត់ត្រាក្រោមទិសដៅយុទ្ធសាស្ត្រនេះឡើយ</h4>
-                                <p class="text-xs text-slate-400 mt-1">សូមបំពេញ ឬផ្លាស់ប្តូរតម្រងព័ត៌មានរបស់អ្នក</p>
+                        <tr class="bg-slate-50/50">
+                            <td colspan="13" class="py-4 text-center text-slate-400 italic text-[11px]">
+                                (មិនទាន់មានវិធានការគន្លឹះយោងនៅក្នុងយុទ្ធសាស្ត្រនេះឡើយ)
                             </td>
                         </tr>
                     `;
@@ -1456,7 +1431,7 @@
             document.getElementById('summary-total-cost').textContent = totalCostSum.toLocaleString() + " លានរៀល";
         }
 
-        // --- INLINE CELL EDITING CONTROL ---
+        // --- CELL INLINE EDITING LOGIC (WITH SECURITY GATEWAY) ---
         function handleStartInlineEdit(id, field, cellElement) {
             const act = activities.find(a => a.id === id);
             
@@ -1524,7 +1499,7 @@
             currentEditingCell = null;
         }
 
-        // --- DASHBOARD ANALYTICS PANEL ---
+        // --- DASHBOARD ANALYTICS CALCULATION ENGINE ---
         function renderDashboard() {
             const totalCount = activities.length;
             const totalCost = activities.reduce((sum, a) => sum + (parseFloat(a.estimatedCostMillionRiels) || 0), 0);
@@ -1584,16 +1559,38 @@
             }).join('');
         }
 
-        // --- DATA ENTRY FORM CONTROLS ---
+        // --- DATA ENTRY FORM (WITH DYNAMIC DEPENDENT DROPDOWNS) ---
         function populateFormSelects() {
             const formSd = document.getElementById('form-strategic-direction');
-            formSd.innerHTML = strategicDirections.map(sd => `<option value="${sd.id}">${sd.id} - ${sd.title.substring(0, 80)}...</option>`).join('');
+            formSd.innerHTML = strategicDirections.map(sd => 
+                `<option value="${sd.id}">${sd.id} - ${sd.title.substring(0, 80)}...</option>`
+            ).join('');
 
             const formDept = document.getElementById('form-coordinating-dept');
             formDept.innerHTML = DEPARTMENTS.map(d => `<option value="${d}">${d}</option>`).join('');
 
             const formDist = document.getElementById('form-district');
             formDist.innerHTML = DISTRICTS.map(d => `<option value="${d}">${d}</option>`).join('');
+
+            // Automatically trigger dynamic load of first Strategic Direction Key Measures
+            if (strategicDirections.length > 0) {
+                handleStrategicDirectionChange(strategicDirections[0].id);
+            }
+        }
+
+        // Dependent Dropdown Trigger logic
+        function handleStrategicDirectionChange(sdId, selectedKeyMeasureValue = "") {
+            const kmSelect = document.getElementById('form-key-measure');
+            const sd = strategicDirections.find(s => s.id === sdId);
+            
+            if (!sd || !sd.keyMeasures || sd.keyMeasures.length === 0) {
+                kmSelect.innerHTML = `<option value="">(គ្មានវិធានការគន្លឹះត្រូវបានកំណត់ឡើយ)</option>`;
+                return;
+            }
+
+            kmSelect.innerHTML = sd.keyMeasures.map(km => 
+                `<option value="${km}" ${km === selectedKeyMeasureValue ? 'selected' : ''}>${km}</option>`
+            ).join('');
         }
 
         function renderFormOptions() {
@@ -1663,6 +1660,10 @@
 
             document.getElementById('form-editing-id').value = act.id;
             document.getElementById('form-strategic-direction').value = act.strategicDirectionId;
+            
+            // Populates dependent key measures and marks current keyMeasure selected
+            handleStrategicDirectionChange(act.strategicDirectionId, act.keyMeasure);
+
             document.getElementById('form-activity-kh').value = act.activityKh;
             document.getElementById('form-indicator-kh').value = act.indicatorKh;
             document.getElementById('form-coordinating-dept').value = act.coordinatingDept;
@@ -1707,6 +1708,8 @@
             }
 
             const editingId = document.getElementById('form-editing-id').value;
+            const strategicDirectionId = document.getElementById('form-strategic-direction').value;
+            const keyMeasure = document.getElementById('form-key-measure').value;
             const activityKh = document.getElementById('form-activity-kh').value;
             const indicatorKh = document.getElementById('form-indicator-kh').value;
             const coordinatingDept = document.getElementById('form-coordinating-dept').value;
@@ -1730,7 +1733,8 @@
 
             const rowData = {
                 id: targetId,
-                strategicDirectionId: document.getElementById('form-strategic-direction').value,
+                strategicDirectionId,
+                keyMeasure,
                 activityKh,
                 indicatorKh,
                 coordinatingDept: currentUser.role === 'department' ? currentUser.department : coordinatingDept,
@@ -2015,28 +2019,35 @@
             });
         }
 
-        // --- DYNAMIC STRATEGIC DIRECTIONS AND KEY MEASURES (ADMIN ONLY) ---
+        // --- STRATEGIC DIRECTIONS AND MUTIPLE KEY MEASURES CONTROLLER ---
         function renderStrategicDirectionsTable() {
             const tbody = document.getElementById('admin-sds-tbody');
             document.getElementById('admin-sd-total-badge').textContent = strategicDirections.length;
 
             tbody.innerHTML = strategicDirections.map(sd => {
-                // Compile list of measures with individual delete buttons
+                // Compile list of multiple key measures with edit & delete options
                 let measuresHtml = '';
                 if (sd.keyMeasures && sd.keyMeasures.length > 0) {
                     measuresHtml = `
                         <div class="mt-2.5 space-y-1.5 pl-3 border-l-2 border-teal-500 bg-slate-50/50 p-2 rounded-lg">
                             <span class="block text-[10px] font-extrabold text-teal-800 uppercase mb-1">បញ្ជីវិធានការគន្លឹះ៖</span>
                             ${sd.keyMeasures.map((km, idx) => `
-                                <div class="flex items-start justify-between gap-2 group text-[11px] py-1 border-b border-slate-100 last:border-0">
+                                <div id="km-container-${sd.id}-${idx}" class="flex items-start justify-between gap-2 group text-[11px] py-1 border-b border-slate-100 last:border-0">
                                     <span class="text-slate-700">
                                         <strong class="text-amber-700">#${idx + 1}៖</strong> ${km}
                                     </span>
-                                    <button onclick="handleDeleteKeyMeasure('${sd.id}', ${idx})" class="text-rose-500 hover:text-rose-700 opacity-0 group-hover:opacity-100 transition-opacity p-0.5" title="លុបវិធានការគន្លឹះនេះ">
-                                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                        </svg>
-                                    </button>
+                                    <div class="flex items-center space-x-1.5 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
+                                        <button onclick="handleEditKeyMeasureInline('${sd.id}', ${idx})" class="text-teal-600 hover:text-teal-800 p-0.5" title="កែសម្រួលវិធានការគន្លឹះ">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                            </svg>
+                                        </button>
+                                        <button onclick="handleDeleteKeyMeasure('${sd.id}', ${idx})" class="text-rose-500 hover:text-rose-700 p-0.5" title="លុបវិធានការគន្លឹះនេះ">
+                                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                            </svg>
+                                        </button>
+                                    </div>
                                 </div>
                               `).join('')}
                         </div>
@@ -2133,6 +2144,85 @@
             });
         }
 
+        // New helper to escape HTML entities safely
+        function escapeHtml(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        }
+
+        // New inline editor activation for individual key measures
+        function handleEditKeyMeasureInline(sdId, index) {
+            if (currentUser.role !== 'admin') {
+                showToast("សិទ្ធិត្រូវបានបដិសេធ!", "error");
+                return;
+            }
+            const containerId = `km-container-${sdId}-${index}`;
+            const container = document.getElementById(containerId);
+            const sd = strategicDirections.find(s => s.id === sdId);
+            const currentText = sd.keyMeasures[index];
+
+            container.innerHTML = `
+                <div class="flex items-center gap-1.5 w-full py-1">
+                    <strong class="text-amber-700 text-[11px] flex-shrink-0">#${index + 1}៖</strong>
+                    <input id="km-edit-input-${sdId}-${index}" type="text" class="flex-1 px-2 py-1 border border-teal-500 rounded text-xs bg-white text-slate-800 font-medium focus:outline-none focus:ring-1 focus:ring-teal-500" value="${escapeHtml(currentText)}" />
+                    <button onclick="saveEditedKeyMeasure('${sdId}', ${index})" class="p-1 bg-emerald-50 text-emerald-600 hover:bg-emerald-100 rounded transition-all flex-shrink-0" title="រក្សាទុក">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </button>
+                    <button onclick="renderStrategicDirectionsTable()" class="p-1 bg-rose-50 text-rose-600 hover:bg-rose-100 rounded transition-all flex-shrink-0" title="បោះបង់">
+                        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            `;
+            
+            const input = document.getElementById(`km-edit-input-${sdId}-${index}`);
+            input.focus();
+            input.select();
+        }
+
+        // Action to save edits to individual key measures and keep related activities linked
+        function saveEditedKeyMeasure(sdId, index) {
+            const input = document.getElementById(`km-edit-input-${sdId}-${index}`);
+            const newValue = input.value.trim();
+            if (!newValue) {
+                showToast("សូមបំពេញអត្ថបទវិធានការគន្លឹះ!", "error");
+                return;
+            }
+
+            const sd = strategicDirections.find(s => s.id === sdId);
+            const oldValue = sd.keyMeasures[index];
+
+            strategicDirections = strategicDirections.map(s => {
+                if (s.id === sdId) {
+                    const updatedMeasures = [...s.keyMeasures];
+                    updatedMeasures[index] = newValue;
+                    return { ...s, keyMeasures: updatedMeasures };
+                }
+                return s;
+            });
+
+            // Sync older linked activities with the newly updated key measure description
+            activities = activities.map(act => {
+                if (act.strategicDirectionId === sdId && act.keyMeasure === oldValue) {
+                    return { ...act, keyMeasure: newValue };
+                }
+                return act;
+            });
+
+            saveStrategicDirections();
+            saveActivities();
+            renderStrategicDirectionsTable();
+            renderActivitiesGrid(); // refresh layout of the main table sheet
+            showToast("បានកែសម្រួលវិធានការគន្លឹះដោយជោគជ័យ!", "success");
+        }
+
         function handleCreateOrUpdateStrategicDirection(event) {
             event.preventDefault();
 
@@ -2152,14 +2242,12 @@
             }
 
             if (editingId) {
-                // Update existing SD but preserve other measures if any
                 strategicDirections = strategicDirections.map(sd => {
                     if (sd.id === editingId) {
                         const existingMeasures = sd.keyMeasures || [];
-                        // Replace or prepend the edited measure
                         if (sdMeasure) {
                             if (existingMeasures.length > 0) {
-                                existingMeasures[0] = sdMeasure; // replace primary measure
+                                existingMeasures[0] = sdMeasure;
                             } else {
                                 existingMeasures.push(sdMeasure);
                             }
@@ -2175,7 +2263,6 @@
                 }
                 showToast("បានកែសម្រួលទិសដៅយុទ្ធសាស្ត្រដោយជោគជ័យ!", "success");
             } else {
-                // Create new
                 if (strategicDirections.some(sd => sd.id.toLowerCase() === sdId.toLowerCase())) {
                     showToast("លេខកូដយុទ្ធសាស្ត្រ (ID) នេះមានរួចមកហើយ!", "error");
                     return;
@@ -2201,7 +2288,6 @@
             document.getElementById('sd-form-id').value = sd.id;
             document.getElementById('sd-form-title-kh').value = sd.title;
             
-            // Populate the primary measure input with the first key measure if it exists
             const primaryMeasure = (sd.keyMeasures && sd.keyMeasures.length > 0) ? sd.keyMeasures[0] : '';
             document.getElementById('sd-form-measure-kh').value = primaryMeasure;
 
@@ -2237,7 +2323,6 @@
                 return;
             }
 
-            // Check if there are active projects referencing this SD
             const hasActivities = activities.some(act => act.strategicDirectionId === id);
             if (hasActivities) {
                 showToast("មិនអាចលុបទិសដៅយុទ្ធសាស្ត្រនេះបានទេ! ដោយសារមានគម្រោងសកម្មភាពកំពុងផ្សារភ្ជាប់នឹងយុទ្ធសាស្ត្រនេះ។", "error");
@@ -2253,7 +2338,7 @@
             });
         }
 
-        // --- SECURE AUTHENTICATION FLOWS ---
+        // --- AUTHENTICATION ACTION CONTROLLERS ---
         function handleOpenLoginModal() {
             document.getElementById('login-username').value = '';
             document.getElementById('login-password').value = '';
@@ -2314,21 +2399,151 @@
 
         function handleLogout() {
             setGuestUser();
-            
             if (activeTab === 'settings' || activeTab === 'input') {
                 switchTab('excel-view');
             }
-            
             renderApp();
             showToast("បានចាកចេញពីគណនីរួចរាល់! ប្រព័ន្ធស្ថិតក្នុងស្ថានភាពមើលបានតែទិន្នន័យ។", "info");
         }
 
-        // --- HELPER UTILITIES ---
-        function handleExportMockExcel() {
+        // --- EXPORT TO PROFESSIONAL EXCEL FILE FORMAT ---
+        function handleExportExcelFile() {
             showToast("កំពុងរៀបចំ និងទាញយកឯកសារ «ម៉ាទ្រីស(ICPD)_3.xlsx»...", "info");
+            
+            let xmlString = `
+                <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+                <head>
+                    <!--[if gte mso 9]>
+                    <xml>
+                        <x:ExcelWorkbook>
+                            <x:ExcelWorksheets>
+                                <x:ExcelWorksheet>
+                                    <x:Name>ម៉ាទ្រីសយុទ្ធសាស្ត្រ ICPD</x:Name>
+                                    <x:WorksheetOptions>
+                                        <x:DisplayGridlines/>
+                                        <x:Print>
+                                            <x:ValidPrinterInfo/>
+                                        </x:Print>
+                                    </x:WorksheetOptions>
+                                </x:ExcelWorksheet>
+                            </x:ExcelWorksheets>
+                        </x:ExcelWorkbook>
+                    </xml>
+                    <![endif]-->
+                    <meta charset="UTF-8">
+                    <style>
+                        table { border-collapse: collapse; }
+                        td, th { border: 1px solid #94a3b8; font-family: 'Segoe UI', Arial, sans-serif; font-size: 11px; }
+                        .title-row { background-color: #0f172a; color: #ffffff; font-weight: bold; font-size: 14px; text-align: center; font-family: 'Segoe UI'; height: 45px; }
+                        .header-row th { background-color: #cfd8dc; color: #374151; font-weight: bold; text-align: center; font-size: 11px; height: 35px; border: 1px solid #64748b; }
+                        .sd-row { background-color: #1e293b; color: #ffffff; font-weight: bold; font-size: 11px; height: 32px; text-align: left; }
+                        .km-row { background-color: #fef3c7; color: #78350f; font-weight: bold; font-size: 11px; font-style: italic; height: 28px; text-align: left; }
+                        .data-row td { padding: 8px; border: 1px solid #cbd5e1; }
+                        .num-col { text-align: center; }
+                        .cost-col { text-align: right; font-weight: bold; color: #0d6e67; background-color: #f0fdf4; }
+                        .status-col { text-align: center; font-weight: bold; }
+                    </style>
+                </head>
+                <body>
+                    <table>
+                        <!-- Columns setup to ensure clean widths -->
+                        <colgroup>
+                            <col width="350">
+                            <col width="350">
+                            <col width="220">
+                            <col width="80">
+                            <col width="120">
+                            <col width="120">
+                            <col width="70">
+                            <col width="70">
+                            <col width="70">
+                            <col width="70">
+                            <col width="70">
+                            <col width="140">
+                            <col width="100">
+                        </colgroup>
+                        <tr><td colspan="13" class="title-row">របាយការណ៍ផ្លូវការ៖ ម៉ាទ្រីស(ICPD)_3.xlsx - រដ្ឋបាលខេត្តកំពង់ឆ្នាំង (២០២៤-២០៣០)</td></tr>
+                        <tr class="header-row">
+                            <th>សកម្មភាព</th>
+                            <th>សូចនាករ</th>
+                            <th>ស្ថាប័នសម្របសម្រួល</th>
+                            <th>ឯកតា</th>
+                            <th>តម្លៃឆ្នាំលើកមុន (២០២៦)</th>
+                            <th>សរុបដល់ឆ្នាំ២០៣០</th>
+                            <th>២០២៦</th>
+                            <th>២០២៧</th>
+                            <th>២០២៨</th>
+                            <th>២០២៩</th>
+                            <th>២០៣០</th>
+                            <th>តម្លៃប៉ាន់ស្មាន (លានរៀល)</th>
+                            <th>ស្ថានភាពអនុវត្ត</th>
+                        </tr>
+            `;
+
+            strategicDirections.forEach(sd => {
+                // Add Beautiful Strategic Direction Banner
+                xmlString += `
+                    <tr class="sd-row">
+                        <td colspan="13" style="padding: 8px; font-weight: bold;">${sd.id} - ${sd.title}</td>
+                    </tr>
+                `;
+
+                if (sd.keyMeasures && sd.keyMeasures.length > 0) {
+                    sd.keyMeasures.forEach((measure, measureIdx) => {
+                        xmlString += `
+                            <tr class="km-row">
+                                <td colspan="13" style="padding: 6px; padding-left: 20px; font-weight: bold;">វិធានការគន្លឹះ ${sd.id}.${measureIdx + 1}៖ ${measure}</td>
+                            </tr>
+                        `;
+
+                        const matched = activities.filter(act => act.strategicDirectionId === sd.id && act.keyMeasure === measure);
+                        if (matched.length > 0) {
+                            matched.forEach(act => {
+                                let statusText = "បានគ្រោងទុក (Planned)";
+                                if (act.status === 'in_progress') statusText = "កំពុងដំណើរការ (In Progress)";
+                                if (act.status === 'completed') statusText = "បានបញ្ចប់ (Completed)";
+
+                                xmlString += `
+                                    <tr class="data-row">
+                                        <td style="font-weight: bold; color: #1e293b;">${act.activityKh}</td>
+                                        <td style="color: #475569;">${act.indicatorKh}</td>
+                                        <td>${act.coordinatingDept}</td>
+                                        <td class="num-col">${act.unitKh}</td>
+                                        <td class="num-col">${act.baselineVal || "-"}</td>
+                                        <td class="num-col" style="font-weight: bold;">${act.totalTarget}</td>
+                                        <td class="num-col">${act.y2026 || "-"}</td>
+                                        <td class="num-col">${act.y2027 || "-"}</td>
+                                        <td class="num-col">${act.y2028 || "-"}</td>
+                                        <td class="num-col">${act.y2029 || "-"}</td>
+                                        <td class="num-col">${act.y2030 || "-"}</td>
+                                        <td class="cost-col">${parseFloat(act.estimatedCostMillionRiels || 0).toLocaleString()}</td>
+                                        <td class="status-col">${statusText}</td>
+                                    </tr>
+                                `;
+                            });
+                        }
+                    });
+                }
+            });
+
+            xmlString += `
+                    </table>
+                </body>
+                </html>
+            `;
+
+            const blob = new Blob([xmlString], { type: 'application/vnd.ms-excel;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'ម៉ាទ្រីស_ICPD_3_ខេត្តកំពង់ឆ្នាំង.xls';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
             setTimeout(() => {
-                showToast("ការទាញយកជោគជ័យ! ព័ត៌មានយុទ្ធសាស្ត្រខេត្តកំពង់ឆ្នាំង ត្រូវបាននាំចេញរួចរាល់។", "success");
-            }, 1500);
+                showToast("ការទាញយកជោគជ័យ! ទម្រង់ឯកសារ Excel ត្រូវបានរក្សាទុកយ៉ាងត្រឹមត្រូវ។", "success");
+            }, 600);
         }
 
         function resetToInitialActivities() {
