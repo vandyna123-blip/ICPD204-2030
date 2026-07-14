@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ប្រព័ន្ធគ្រប់គ្រង និងតាមដានរបាយការណ៍សកម្មភាព - មន្ទីរផែនការខេត្តកំពង់ឆ្នាំង</title>
+    <title>ប្រព័ន្ធគ្រប់គ្រង និងតាមដានវាយតម្លៃ ផែនការសកម្មភាពដើម្បីអនុវត្តក្របខ័ណ្ឌយុទ្ធសាស្រ្តកម្ពុជា ២០២៤-២០៣០ ខេត្តកំពង់ឆ្នាំង</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts for Cambodia Branding -->
@@ -38,15 +38,26 @@
     <!-- HEADER SECTION -->
     <header class="bg-gradient-to-r from-[#1e293b] via-[#0f172a] to-[#1e293b] text-white shadow-xl border-b border-slate-700/50 sticky top-0 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-24">
+            <div class="flex justify-between items-center min-h-28 py-4">
                 
-                <!-- Title & Branding -->
-                <div class="flex items-center space-x-3.5">
-                    <div class="p-3 bg-teal-600 rounded-xl shadow-inner border border-teal-500/20">
-                        <svg class="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
+                <!-- Title, Branding & Logo Upload Area as specified in image_2a8258_2.png -->
+                <div class="flex items-center space-x-4">
+                    <!-- Dynamic Official Logo Box -->
+                    <div class="relative group cursor-pointer w-20 h-20 bg-teal-600 rounded-xl shadow-inner border border-teal-500/20 flex items-center justify-center overflow-hidden flex-shrink-0" onclick="triggerLogoUpload()">
+                        <img id="system-logo" src="" class="w-full h-full object-cover hidden" alt="Logo" />
+                        <div id="default-logo-placeholder" class="text-white flex flex-col items-center justify-center">
+                            <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </div>
+                        <!-- Admin Quick Change Badge Overlay -->
+                        <div id="logo-admin-overlay" class="absolute inset-0 bg-black/50 text-[9px] font-bold text-slate-100 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity text-center px-1">
+                            ប្តូរ Logo
+                        </div>
                     </div>
+                    <!-- Hidden Logo File Input -->
+                    <input type="file" id="logo-file-input" accept="image/*" class="hidden" onchange="handleLogoFileSelect(event)" />
+
                     <div>
                         <div class="flex items-center space-x-2">
                             <h1 class="text-xs sm:text-sm md:text-base font-extrabold leading-tight tracking-wide text-slate-100 khmer-moul">
@@ -56,7 +67,7 @@
                                 Template: ម៉ាទ្រីស(ICPD)_3.xlsx
                             </span>
                         </div>
-                        <p class="text-[11px] sm:text-xs text-slate-300 font-medium mt-0.5">
+                        <p class="text-[11px] sm:text-xs text-slate-300 font-medium mt-1.5">
                             សម្របសម្រួល និងគ្រប់គ្រងដោយផ្ទាល់ដោយ៖ <span class="text-teal-400 font-bold">មន្ទីរផែនការខេត្តកំពង់ឆ្នាំង និងជាក្រុមលេខាធិការដ្ឋានគណៈកម្មាធិការប្រជាជន និងអភិវឌ្ឍន៍ខេត្ត</span>
                         </p>
                     </div>
@@ -192,7 +203,7 @@
             <!-- TAB 1: SPREADSHEET EXCEL GRID VIEW -->
             <div id="panel-excel-view" class="space-y-6">
                 
-                <!-- Official Metadata Header Block -->
+                <!-- Official Metadata Header Block with image_299d7c_2.png style layout -->
                 <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                     <div>
                         <div class="flex items-center space-x-2">
@@ -211,6 +222,7 @@
                     </div>
 
                     <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full md:w-auto">
+                        <!-- Custom styled download button as represented in image_299d7c_2.png -->
                         <button onclick="handleExportExcelFile()" class="flex items-center justify-center space-x-2 px-5 py-3 bg-[#0d6e67] hover:bg-[#0b5c56] text-white rounded-2xl text-xs font-black transition-all shadow-lg shadow-teal-900/20 border border-[#0d6e67] text-center min-w-[210px]">
                             <svg class="w-4 h-4 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
@@ -238,7 +250,7 @@
                         <span class="text-[11px] text-slate-500 font-medium">រកឃើញគម្រោងចំនួន៖ <strong id="filter-count-badge">0</strong></span>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                         
                         <!-- Search Input -->
                         <div class="relative">
@@ -250,17 +262,12 @@
                             <input oninput="renderActivitiesGrid()" id="filter-search-query" type="text" placeholder="ស្វែងរកសកម្មភាព, សូចនាករ..." class="w-full pl-9 pr-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500 bg-slate-50" />
                         </div>
 
-                        <!-- District filter -->
-                        <select onchange="renderActivitiesGrid()" id="filter-district" class="w-full px-2 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none bg-white font-medium text-slate-700">
-                            <option value="all">គ្រប់ក្រុង/ស្រុក (ខេត្តកំពង់ឆ្នាំង)</option>
-                        </select>
-
                         <!-- Department filter -->
                         <select onchange="renderActivitiesGrid()" id="filter-department" class="w-full px-2 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none bg-white font-medium text-slate-700">
                             <option value="all">គ្រប់មន្ទីរ/ស្ថាប័នសម្របសម្រួល</option>
                         </select>
 
-                        <!-- Status filter -->
+                        <!-- Status filter (Matches image_6199e3.png) -->
                         <select onchange="renderActivitiesGrid()" id="filter-status" class="w-full px-2 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none bg-white font-medium text-slate-700">
                             <option value="all">គ្រប់ស្ថានភាព</option>
                             <option value="planned">បានគ្រោងទុក (Planned)</option>
@@ -279,8 +286,8 @@
                             <span>សន្លឹកកិច្ចការ៖ ផែនការសកម្មភាពយុទ្ធសាស្ត្រថ្នាក់ក្រោមជាតិ</span>
                         </div>
                         <div class="text-[11px] text-slate-500 font-medium">
-                            <span class="inline-block px-1.5 py-0.5 bg-sky-100 text-sky-800 rounded font-bold mr-1">ណែនាំ៖</span> 
-                            ចុចពីរដង (Double-Click) លើប្រអប់កោសិកា ដើម្បីកែសម្រួលទិន្នន័យរហ័ស
+                          <span class="inline-block px-1.5 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold mr-1">ប្រៀបធៀបគោលដៅ៖</span> 
+                          <span class="text-slate-500">ផែនការ (T) / ជាក់ស្តែង (A) - ចុចពីរដងដើម្បីកែសម្រួលផ្ទាល់</span>
                         </div>
                     </div>
 
@@ -291,14 +298,16 @@
                                     <th class="py-4 px-3 border-r border-slate-300 w-80 text-left">សកម្មភាព</th>
                                     <th class="py-4 px-3 border-r border-slate-300 w-80 text-left">សូចនាករ</th>
                                     <th class="py-4 px-3 border-r border-slate-300 w-48 text-left">ស្ថាប័នសម្របសម្រួល</th>
+                                    <th class="py-4 px-3 border-r border-slate-300 w-48 text-left">ស្ថាប័នអនុវត្ត</th>
                                     <th class="py-4 px-2 border-r border-slate-300 w-20">ឯកតា</th>
                                     <th class="py-4 px-3 border-r border-slate-300 w-32">តម្លៃសូចនាករ<br />(ឆ្នាំ) លើកមុន<br />ឆ្នាំ២០២៦</th>
                                     <th class="py-4 px-3 border-r border-slate-300 w-28">សរុបដល់<br />ឆ្នាំ២០៣០</th>
-                                    <th class="py-4 px-2 border-r border-slate-300 w-16">២០២៦</th>
-                                    <th class="py-4 px-2 border-r border-slate-300 w-16">២០២៧</th>
-                                    <th class="py-4 px-2 border-r border-slate-300 w-16">២០២៨</th>
-                                    <th class="py-4 px-2 border-r border-slate-300 w-16">២០២៩</th>
-                                    <th class="py-4 px-2 border-r border-slate-300 w-16">២០៣០</th>
+                                    <!-- Twin annual columns to track Target and Actuals -->
+                                    <th class="py-3 px-2 border-r border-slate-300 w-24">២០២៦<br><span class="text-[9px] font-normal text-slate-500">(T / A)</span></th>
+                                    <th class="py-3 px-2 border-r border-slate-300 w-24">២០២៧<br><span class="text-[9px] font-normal text-slate-500">(T / A)</span></th>
+                                    <th class="py-3 px-2 border-r border-slate-300 w-24">២០២៨<br><span class="text-[9px] font-normal text-slate-500">(T / A)</span></th>
+                                    <th class="py-3 px-2 border-r border-slate-300 w-24">២០២៩<br><span class="text-[9px] font-normal text-slate-500">(T / A)</span></th>
+                                    <th class="py-3 px-2 border-r border-slate-300 w-24">២០៣០<br><span class="text-[9px] font-normal text-slate-500">(T / A)</span></th>
                                     <th class="py-4 px-3 border-r border-slate-300 w-36">តម្លៃប៉ាន់ស្មាន<br />(លានរៀល)</th>
                                     <th class="py-4 px-2 w-20">ជម្រើស</th>
                                 </tr>
@@ -394,7 +403,7 @@
                 </div>
 
                 <!-- Progress representation columns -->
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     
                     <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm">
                         <h3 class="font-extrabold text-slate-800 text-xs uppercase tracking-wider mb-4 border-b border-slate-100 pb-2">ស្ថានភាពអនុវត្តជាក់ស្តែង</h3>
@@ -433,10 +442,24 @@
                         </div>
                     </div>
 
-                    <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm lg:col-span-2">
-                        <h3 class="font-extrabold text-slate-800 text-xs uppercase tracking-wider mb-4 border-b border-slate-100 pb-2">ការវិភាគតម្លៃប៉ាន់ស្មានតាមរដ្ឋបាលស្រុក (លានរៀល)</h3>
-                        <div id="district-breakdown-list" class="space-y-3">
-                            <!-- Populated dynamically via JS -->
+                    <!-- Macro targets achieved metrics card -->
+                    <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-extrabold text-slate-800 text-xs uppercase tracking-wider mb-4 border-b border-slate-100 pb-2">ការវិភាគគោលដៅធៀបនឹងលទ្ធផលជាក់ស្តែង (Target vs Actual)</h3>
+                            <p class="text-[11px] text-slate-500 mb-3 leading-relaxed">
+                                សន្ទស្សន៍វាយតម្លៃនេះ បង្ហាញពីកម្រិតនៃការសម្រេចបាននូវលទ្ធផលជាក់ស្តែង ធៀបនឹងផែនការដែលបានគ្រោងទុកក្នុងឆ្នាំបច្ចុប្បន្ន។
+                            </p>
+                        </div>
+                        <div class="p-4 bg-emerald-50/50 rounded-xl border border-emerald-100 flex items-center justify-between">
+                            <div>
+                                <span class="text-xs font-bold text-slate-600 block">កម្រិតសម្រេចបានរួមទូទាំងខេត្ត</span>
+                                <span class="text-2xl font-black text-emerald-800 font-mono mt-1 block" id="achieved-vs-planned-pct">0%</span>
+                            </div>
+                            <div class="w-16 h-16 rounded-full border-4 border-emerald-500/20 flex items-center justify-center bg-white">
+                                <svg class="w-8 h-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
                         </div>
                     </div>
 
@@ -444,7 +467,7 @@
 
             </div>
 
-            <!-- TAB 3: SMART DATA ENTRY FORM (WITH DYNAMIC DEPENDENT DROPDOWNS) -->
+            <!-- TAB 3: SMART DATA ENTRY FORM (WITH DYNAMIC DEPENDENT DROPDOWNS & TARGETS COMPARISON) -->
             <div id="panel-input" class="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 space-y-6 hidden">
                 
                 <div class="border-b border-slate-100 pb-4">
@@ -483,7 +506,7 @@
                             </select>
                         </div>
 
-                        <!-- Key Measure Dependent Dropdown (Highly requested addition) -->
+                        <!-- Key Measure Dependent Dropdown -->
                         <div>
                             <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1.5 flex items-center justify-between">
                                 <span>វិធានការគន្លឹះយោង *</span>
@@ -507,76 +530,82 @@
                         </div>
                     </div>
 
-                    <!-- Coordinating Department and Unit -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <!-- Coordinating Department and Implementing Department as in image_620684.png -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                           <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1.5">ស្ថាប័នសម្របសម្រួល *</label>
-                          <select id="form-coordinating-dept" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white disabled:bg-slate-50">
-                            <!-- populated by script -->
-                          </select>
+                          <input id="form-coordinating-dept" list="coordinating-dept-list" placeholder="ជ្រើសរើស ឬវាយបញ្ចូលស្ថាប័ន..." class="w-full px-3 py-2.5 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white disabled:bg-slate-50" required />
+                          <datalist id="coordinating-dept-list"></datalist>
                         </div>
                         <div>
-                          <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1.5">ឯកតាសូចនាករ *</label>
-                          <input id="form-unit-kh" type="text" placeholder="ឧ. នាក់, លើក, ភាគរយ" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500" required />
-                        </div>
-                        <div>
-                          <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1.5">រដ្ឋបាលស្រុកអនុវត្ត</label>
-                          <select id="form-district" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white disabled:bg-slate-50">
-                            <!-- populated by script -->
-                          </select>
+                          <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1.5">ស្ថាប័នអនុវត្ត</label>
+                          <input id="form-implementing-dept" list="implementing-dept-list" placeholder="ជ្រើសរើស ឬវាយបញ្ចូលស្ថាប័ន..." class="w-full px-3 py-2.5 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white" />
+                          <datalist id="implementing-dept-list"></datalist>
                         </div>
                     </div>
 
-                    <!-- Target breakdowns and Costing -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <!-- Target breakdowns, Costing and Unit -->
+                    <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+                        <div>
+                          <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1.5">ឯកតាសូចនាករ *</label>
+                          <input id="form-unit-kh" type="text" placeholder="ឧ. នាក់, លើក, ភាគរយ" class="w-full px-3 py-2.5 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500" required />
+                        </div>
                         <div>
                           <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1.5">តម្លៃលើកមុន ឆ្នាំ២០២៦ (Baseline)</label>
-                          <input id="form-baseline-val" type="text" placeholder="ឧ. ៥,០០០" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500" />
+                          <input id="form-baseline-val" type="text" placeholder="ឧ. ៥,០០០" class="w-full px-3 py-2.5 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500" />
                         </div>
                         <div>
                           <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1.5">សរុបដល់ឆ្នាំ២០៣០</label>
-                          <input id="form-total-target" type="text" placeholder="ឧ. ២៥,០០០" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500" />
+                          <input id="form-total-target" type="text" placeholder="ឧ. ២៥,០០០" class="w-full px-3 py-2.5 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500" />
                         </div>
                         <div>
                           <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1.5">តម្លៃប៉ាន់ស្មាន (លានរៀល) *</label>
-                          <input id="form-estimated-cost" type="number" placeholder="ឧ. 350" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500" required />
+                          <input id="form-estimated-cost" type="number" placeholder="ឧ. 350" class="w-full px-3 py-2.5 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500" required />
                         </div>
                     </div>
 
-                    <!-- Annual Target milestones list block -->
+                    <!-- Annual Target milestones list block (Enhanced with Target and Actual twin outputs) -->
                     <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                        <span class="text-[11px] font-bold text-slate-700 uppercase block mb-3">ការបែងចែកគោលដៅប្រចាំឆ្នាំ (២០២៦-២០៣០)</span>
+                        <div class="flex items-center justify-between mb-3 flex-wrap gap-2">
+                            <span class="text-[11px] font-bold text-slate-700 uppercase">ការបែងចែកគោលដៅប្រចាំឆ្នាំ (២០២៦-២០៣០)</span>
+                            <span class="text-[9px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-black font-mono">Target (T) vs Actual (A)</span>
+                        </div>
                         <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
                             <div>
                                 <label class="block text-[10px] font-bold text-slate-500 mb-1">២០២៦</label>
-                                <input id="form-y2026" type="text" placeholder="គោលដៅ" class="w-full px-2 py-1.5 border border-slate-300 rounded-lg text-xs text-center" />
+                                <input id="form-y2026" type="text" placeholder="ផែនការ" class="w-full px-2 py-1.5 border border-slate-300 rounded-t-lg text-xs text-center border-b-0" />
+                                <input id="form-actual-y2026" type="text" placeholder="ជាក់ស្តែង" class="w-full px-2 py-1.5 border border-emerald-300 rounded-b-lg text-xs text-center bg-emerald-50/20 actual-input-field font-bold text-emerald-800" />
                             </div>
                             <div>
                                 <label class="block text-[10px] font-bold text-slate-500 mb-1">២០២៧</label>
-                                <input id="form-y2027" type="text" placeholder="គោលដៅ" class="w-full px-2 py-1.5 border border-slate-300 rounded-lg text-xs text-center" />
+                                <input id="form-y2027" type="text" placeholder="ផែនការ" class="w-full px-2 py-1.5 border border-slate-300 rounded-t-lg text-xs text-center border-b-0" />
+                                <input id="form-actual-y2027" type="text" placeholder="ជាក់ស្តែង" class="w-full px-2 py-1.5 border border-emerald-300 rounded-b-lg text-xs text-center bg-emerald-50/20 actual-input-field font-bold text-emerald-800" />
                             </div>
                             <div>
                                 <label class="block text-[10px] font-bold text-slate-500 mb-1">២០២៨</label>
-                                <input id="form-y2028" type="text" placeholder="គោលដៅ" class="w-full px-2 py-1.5 border border-slate-300 rounded-lg text-xs text-center" />
+                                <input id="form-y2028" type="text" placeholder="ផែនការ" class="w-full px-2 py-1.5 border border-slate-300 rounded-t-lg text-xs text-center border-b-0" />
+                                <input id="form-actual-y2028" type="text" placeholder="ជាក់ស្តែង" class="w-full px-2 py-1.5 border border-emerald-300 rounded-b-lg text-xs text-center bg-emerald-50/20 actual-input-field font-bold text-emerald-800" />
                             </div>
                             <div>
                                 <label class="block text-[10px] font-bold text-slate-500 mb-1">២០២៩</label>
-                                <input id="form-y2029" type="text" placeholder="គោលដៅ" class="w-full px-2 py-1.5 border border-slate-300 rounded-lg text-xs text-center" />
+                                <input id="form-y2029" type="text" placeholder="ផែនការ" class="w-full px-2 py-1.5 border border-slate-300 rounded-t-lg text-xs text-center border-b-0" />
+                                <input id="form-actual-y2029" type="text" placeholder="ជាក់ស្តែង" class="w-full px-2 py-1.5 border border-emerald-300 rounded-b-lg text-xs text-center bg-emerald-50/20 actual-input-field font-bold text-emerald-800" />
                             </div>
                             <div>
                                 <label class="block text-[10px] font-bold text-slate-500 mb-1">២០៣០</label>
-                                <input id="form-y2030" type="text" placeholder="គោលដៅ" class="w-full px-2 py-1.5 border border-slate-300 rounded-lg text-xs text-center" />
+                                <input id="form-y2030" type="text" placeholder="ផែនការ" class="w-full px-2 py-1.5 border border-slate-300 rounded-t-lg text-xs text-center border-b-0" />
+                                <input id="form-actual-y2030" type="text" placeholder="ជាក់ស្តែង" class="w-full px-2 py-1.5 border border-emerald-300 rounded-b-lg text-xs text-center bg-emerald-50/20 actual-input-field font-bold text-emerald-800" />
                             </div>
                         </div>
                     </div>
 
-                    <!-- Operational status and progress percent -->
+                    <!-- Operational status and progress percent (Status conforms to image_6199e3.png) -->
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                         <div>
                           <label class="block text-[11px] font-bold text-slate-700 uppercase mb-1.5">ស្ថានភាពអនុវត្ត</label>
-                          <select id="form-status" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white">
+                          <select id="form-status" onchange="handleFormStatusChange(this.value)" class="w-full px-3 py-2 border border-slate-300 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-teal-500 bg-white">
                             <option value="planned">បានគ្រោងទុក (Planned)</option>
-                            <option value="in_progress">កំពុងដំណើរការ (In Progress)</option>
+                            <option value="in_progress" selected>កំពុងដំណើរការ (In Progress)</option>
                             <option value="completed">បានបញ្ចប់ (Completed)</option>
                           </select>
                         </div>
@@ -766,7 +795,7 @@
 
                     </div>
 
-                    <!-- ADMIN SUB-TAB 2: DYNAMIC STRATEGIC DIRECTIONS AND KEY MEASURES -->
+                    <!-- ADMIN SUB-TAB 2: DYNAMIC STRATEGIC DIRECTIONS AND KEY MEASURES (Includes inline modifier - image_299619.png) -->
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-6 border-t border-slate-200">
                         
                         <!-- Strategic Direction Creator Form Card -->
@@ -808,7 +837,7 @@
                             </form>
                         </div>
 
-                        <!-- Strategic Direction List Table Card -->
+                        <!-- Strategic Direction List Table Card (Includes direct updates visual layout) -->
                         <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-sm lg:col-span-2 space-y-4">
                             <div class="border-b border-slate-100 pb-3 flex justify-between items-center">
                                 <h3 class="font-extrabold text-slate-800 text-xs uppercase tracking-wider flex items-center text-teal-800">
@@ -860,7 +889,7 @@
         </div>
     </footer>
 
-    <!-- SECURE AUTHENTICATION MODAL -->
+    <!-- SECURE AUTHENTICATION MODAL (Credentials listing removed entirely as requested) -->
     <div id="login-modal" class="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
         <div class="bg-white w-full max-w-md rounded-2xl shadow-2xl border border-slate-100 overflow-hidden transform scale-95 transition-all duration-300">
             
@@ -881,7 +910,7 @@
                 </button>
             </div>
 
-            <!-- Modal Form Body (CLEANED - Test helper accounts block completely removed as requested) -->
+            <!-- Modal Form Body -->
             <form id="login-form" onsubmit="handleLoginSubmit(event)" class="p-6 space-y-4">
                 
                 <div>
@@ -964,7 +993,7 @@
             "រដ្ឋបាលខេត្ត"
         ];
 
-        // Seed 6 Strategic Directions with Multiple Key Measures (Array format)
+        // Seed Strategic Directions with Multiple Key Measures (Array format)
         const INITIAL_STRATEGIC_DIRECTIONS = [
             {
                 id: "SD1",
@@ -999,18 +1028,23 @@
                 strategicDirectionId: "SD1",
                 keyMeasure: "វិធានការគន្លឹះទី១.១៖ ចូលរួមអនុវត្តយុទ្ធសាស្ត្រវិជ្ជមាន ផែនការសកម្មភាពសេដ្ឋកិច្ចថែទាំ និងផែនការសកម្មភាពជាតិស្តីពីស្រ្តីសន្តិភាពនិងសន្តិសុខ។",
                 activityKh: "ចូលរួមអនុវត្តយុទ្ធសាស្ត្រវិជ្ជមាន ផែនការសកម្មភាពសេដ្ឋកិច្ចថែទាំ ផែនការសកម្មភាពជាតិស្តីពីស្រ្តីសន្តិភាពនិងសន្តិសុខ និងគាំទ្រសេវាដោះស្រាយទាន់ពេល",
-                indicatorKh: "ចំនួនស្ត្រី និងក្មេងស្រីងាយរងគ្រោះទទួលបានសេវាគាំពារសង្គម និងកិច្ចសង្គ្រោះផ្នែកច្បាប់ទាន់ពេលវេលា និងមានប្រសិទ្ធភាព",
+                indicatorKh: "عددស្ត្រី និងក្មេងស្រីងាយរងគ្រោះទទួលបានសេវាគាំពារសង្គម និងកិច្ចសង្គ្រោះផ្នែកច្បាប់ទាន់ពេលវេលា និងមានប្រសិទ្ធភាព",
                 coordinatingDept: "មន្ទីរកិច្ចការនារី",
+                implementingDept: "មន្ទីរសង្គមកិច្ច អតីតយុទ្ធជន និងយុវនីតិសម្បទា",
                 unitKh: "នាក់",
                 baselineVal: "៥,០០០ (២០២៥)",
                 totalTarget: "២៥,០០០",
                 y2026: "៧,០០០",
+                actualY2026: "៥,០០០",
                 y2027: "១០,០០០",
+                actualY2027: "0",
                 y2028: "១៤,០០០",
+                actualY2028: "0",
                 y2029: "១៩,០០០",
+                actualY2029: "0",
                 y2030: "២៥,០០០",
+                actualY2030: "0",
                 estimatedCostMillionRiels: 350, 
-                district: "ស្រុករលាប្អៀរ",
                 status: "in_progress",
                 progressPercent: 45,
                 responsiblePerson: "លោកស្រី ម៉ែន សុភី",
@@ -1023,49 +1057,31 @@
                 activityKh: "រៀបចំវគ្គបណ្តុះបណ្តាល និងពង្រឹងសមត្ថភាពដល់អាជ្ញាធរមូលដ្ឋាន លើច្បាប់ការពារស្ត្រី និងទប់ស្កាត់អំពើហិង្សា",
                 indicatorKh: "ចំនួនមន្ត្រីឃុំ សង្កាត់ និងសមត្ថកិច្ចមូលដ្ឋាន ដែលបានឆ្លងកាត់ការបណ្តុះបណ្តាលក្របខ័ណ្ឌច្បាប់ការពារ",
                 coordinatingDept: "មន្ទីរកិច្ចការនារី",
+                implementingDept: "មន្ទីរកិច្ចការនារី",
                 unitKh: "នាក់",
                 baselineVal: "១៥០ (២០២៥)",
                 totalTarget: "៨០០",
                 y2026: "២០០",
+                actualY2026: "២០០",
                 y2027: "៣៥០",
+                actualY2027: "៣៥០",
                 y2028: "៥០០",
+                actualY2028: "៥០០",
                 y2029: "៦៥០",
+                actualY2029: "៦៥០",
                 y2030: "៨០០",
+                actualY2030: "៨០០",
                 estimatedCostMillionRiels: 120,
-                district: "ក្រុងកំពង់ឆ្នាំង",
                 status: "completed",
                 progressPercent: 100,
                 responsiblePerson: "កញ្ញា សុខ លីដា",
                 remarks: "បានរៀបចំវគ្គដំបូងសម្រាប់រដ្ឋបាលក្រុងកំពង់ឆ្នាំងរួចរាល់"
-            },
-            {
-                id: "ACT-003",
-                strategicDirectionId: "SD2",
-                keyMeasure: "វិធានការគន្លឹះទី២.១៖ ពង្រឹងនិងពង្រីកសេវាថែទាំសុខភាពបន្តពូជ និងសម្ភពបន្ទាន់នៅតាមមូលដ្ឋានជនបទ។",
-                activityKh: "ពង្រីកការផ្តល់សេវាថែទាំសុខភាពបន្តពូជចល័ត និងការពិនិត្យផ្ទៃពោះដោយឥតគិតថ្លៃនៅតំបន់ដាច់ស្រយាល និងសហគមន៍ជនងាយរងគ្រោះ",
-                indicatorKh: "ចំនួនស្ត្រីមានផ្ទៃពោះដែលបានទទួលការពិនិត្យសុខភាពសម្ភពចល័តយ៉ាងហោចណាស់ ៤ដង",
-                coordinatingDept: "មន្ទីរសុខាភិបាល",
-                unitKh: "នាក់",
-                baselineVal: "១,២០០ (២០២៥)",
-                totalTarget: "៦,០០០",
-                y2026: "១,៨០០",
-                y2027: "២,៦០០",
-                y2028: "៣,៧០០",
-                y2029: "៤,៨០០",
-                y2030: "៦,០០០",
-                estimatedCostMillionRiels: 450,
-                district: "ស្រុកជលគិរី",
-                status: "in_progress",
-                progressPercent: 30,
-                responsiblePerson: "លោក ដក សារិន",
-                remarks: "ផ្តោតលើតំបន់ទឹកលិចដែលពិបាកធ្វើដំណើរ"
             }
         ];
 
         const INITIAL_USERS_DB = [
             { id: "U-001", name: "ឌន វណ្ណឌីណា", role: "admin", entity: "មន្ទីរផែនការខេត្តកំពង់ឆ្នាំង", district: "ទូទាំងខេត្ត", department: "មន្ទីរផែនការ", username: "admin", password: "123", status: "active", note: "គណនីអ្នកគ្រប់គ្រងប្រព័ន្ធជាន់ខ្ពស់ (មន្ទីរផែនការ)" },
-            { id: "U-002", name: "អ៊ឹម សារឿន", role: "district", entity: "រដ្ឋបាលស្រុករលាប្អៀរ", district: "ស្រុករលាប្អៀរ", department: "គ្រប់វិស័យមូលដ្ឋាន", username: "roleapier", password: "111", status: "active", note: "គណនីមន្ត្រីរដ្ឋបាលស្រុករលាប្អៀរ" },
-            { id: "U-003", name: "លោកស្រី ម៉ែន សុភី", role: "department", entity: "មន្ទីរកិច្ចការនារីខេត្តកំពង់ឆ្នាំង", district: "ទូទាំងខេត្ត", department: "មន្ទីរកិច្ចការនារី", username: "womendept", password: "222", status: "active", note: "គណនីមន្ត្រីបង្គោលមន្ទីរកិច្ចការនារី" }
+            { id: "U-002", name: "លោកស្រី ម៉ែន សុភី", role: "department", entity: "មន្ទីរកិច្ចការនារីខេត្តកំពង់ឆ្នាំង", district: "ទូទាំងខេត្ត", department: "មន្ទីរកិច្ចការនារី", username: "womendept", password: "222", status: "active", note: "គណនីមន្ត្រីបង្គោលមន្ទីរកិច្ចការនារី" }
         ];
 
         // --- GLOBAL STATE ---
@@ -1107,6 +1123,7 @@
             setGuestUser();
             populateSelectOptions();
             renderApp();
+            loadSavedLogo();
             
             showToast("ស្វាគមន៍មកកាន់ប្រព័ន្ធគ្រប់គ្រងរបាយការណ៍សកម្មភាពខេត្តកំពង់ឆ្នាំង!", "info");
         };
@@ -1133,6 +1150,63 @@
             };
         }
 
+        // SYSTEM LOGO MANAGERS
+        function triggerLogoUpload() {
+            if (currentUser.role !== 'admin') {
+                showToast("មានតែអ្នកគ្រប់គ្រងជាន់ខ្ពស់ (Super Admin) ប៉ុណ្ណោះដែលអាចប្តូរ Logo បាន!", "error");
+                return;
+            }
+            document.getElementById('logo-file-input').click();
+        }
+
+        function handleLogoFileSelect(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            if (file.size > 2 * 1024 * 1024) {
+                showToast("ទំហំរូបភាពមិនអាចលើសពី 2MB ឡើយ!", "error");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64Data = e.target.result;
+                localStorage.setItem('kampong_chhnang_system_logo', base64Data);
+                applyLogo(base64Data);
+                showToast("បានផ្លាស់ប្តូរ Logo ប្រព័ន្ធដោយជោគជ័យ!", "success");
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function loadSavedLogo() {
+            const savedLogo = localStorage.getItem('kampong_chhnang_system_logo');
+            if (savedLogo) {
+                applyLogo(savedLogo);
+            }
+        }
+
+        function applyLogo(base64Data) {
+            const img = document.getElementById('system-logo');
+            const placeholder = document.getElementById('default-logo-placeholder');
+            img.src = base64Data;
+            img.classList.remove('hidden');
+            placeholder.classList.add('hidden');
+        }
+
+        function resetSystemLogo() {
+            if (currentUser.role !== 'admin') {
+                showToast("សិទ្ធិត្រូវបានបដិសេធ!", "error");
+                return;
+            }
+            localStorage.removeItem('kampong_chhnang_system_logo');
+            const img = document.getElementById('system-logo');
+            const placeholder = document.getElementById('default-logo-placeholder');
+            img.src = "";
+            img.classList.add('hidden');
+            placeholder.classList.remove('hidden');
+            showToast("បានកំណត់ Logo លំនាំដើមឡើងវិញរួចរាល់!", "info");
+        }
+
         function renderApp() {
             renderHeaderAuth();
             renderSidebarRoleContext();
@@ -1147,7 +1221,10 @@
         // --- AUTHENTICATION TEMPLATE UI ---
         function renderHeaderAuth() {
             const authArea = document.getElementById('auth-area');
+            const logoAdminOverlay = document.getElementById('logo-admin-overlay');
+
             if (currentUser.role === 'guest') {
+                logoAdminOverlay.classList.add('hidden');
                 authArea.innerHTML = `
                     <button onclick="handleOpenLoginModal()" class="flex items-center space-x-1.5 px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white rounded-xl text-xs font-bold transition-all shadow-md shadow-teal-700/20">
                         <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1157,6 +1234,11 @@
                     </button>
                 `;
             } else {
+                if (currentUser.role === 'admin') {
+                    logoAdminOverlay.classList.remove('hidden');
+                } else {
+                    logoAdminOverlay.classList.add('hidden');
+                }
                 authArea.innerHTML = `
                     <div class="flex items-center space-x-2 bg-slate-800/80 p-2 rounded-xl border border-slate-700/40">
                         <div class="px-2 text-right">
@@ -1187,9 +1269,6 @@
                 if (currentUser.role === 'admin') {
                     badgeStyle = "bg-indigo-950/60 text-indigo-300 border border-indigo-800/40";
                     badgeText = "Super Admin";
-                } else if (currentUser.role === 'district') {
-                    badgeStyle = "bg-emerald-950/60 text-emerald-300 border border-emerald-800/40";
-                    badgeText = "រដ្ឋបាលស្រុក";
                 }
                 
                 badgeContainer.innerHTML = `<span class="inline-block px-2 py-0.5 rounded text-[10px] font-bold ${badgeStyle}">${badgeText}</span>`;
@@ -1218,7 +1297,7 @@
                     </svg>
                 `;
             } else {
-                const scopeText = currentUser.role === 'district' ? `ដែនរដ្ឋបាល ${currentUser.district}` : `មន្ទីរទទួលបន្ទុក ${currentUser.department}`;
+                const scopeText = `មន្ទីរទទួលបន្ទុក ${currentUser.department}`;
                 desc.innerHTML = `លោកអ្នកបានចូលប្រើប្រាស់ជា <strong>មន្ត្រីអនុវត្ត</strong>។ មានសិទ្ធិកែសម្រួលគម្រោងណាដែលស្ថិតក្រោម៖ <strong>${scopeText}</strong> ប៉ុណ្ណោះ។`;
                 lockContainer.innerHTML = `
                     <svg class="h-4 w-4 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1229,10 +1308,6 @@
         }
 
         function populateSelectOptions() {
-            const districtFilters = ["all", ...DISTRICTS.slice(0, 8)];
-            const districtSelect = document.getElementById('filter-district');
-            districtSelect.innerHTML = districtFilters.map(d => `<option value="${d}">${d === 'all' ? 'គ្រប់ក្រុង/ស្រុក (ខេត្តកំពង់ឆ្នាំង)' : d}</option>`).join('');
-
             const deptFilters = ["all", ...DEPARTMENTS];
             const deptSelect = document.getElementById('filter-department');
             deptSelect.innerHTML = deptFilters.map(d => `<option value="${d}">${d === 'all' ? 'គ្រប់មន្ទីរ/ស្ថាប័នសម្របសម្រួល' : d}</option>`).join('');
@@ -1276,7 +1351,6 @@
 
         function getFilteredActivities() {
             const query = document.getElementById('filter-search-query').value.toLowerCase();
-            const district = document.getElementById('filter-district').value;
             const department = document.getElementById('filter-department').value;
             const status = document.getElementById('filter-status').value;
 
@@ -1286,15 +1360,14 @@
                                       act.coordinatingDept.toLowerCase().includes(query) ||
                                       act.id.toLowerCase().includes(query);
                 
-                const matchesDistrict = (district === 'all') || (act.district === district);
                 const matchesDept = (department === 'all') || (act.coordinatingDept === department);
                 const matchesStatus = (status === 'all') || (act.status === status);
 
-                return matchesSearch && matchesDistrict && matchesDept && matchesStatus;
+                return matchesSearch && matchesDept && matchesStatus;
             });
         }
 
-        // --- SPREADSHEET TABLE GRID ENGINE (WITH KEY MEASURES GROUPING) ---
+        // --- SPREADSHEET TABLE GRID ENGINE (Enhanced with Target vs. Actual comparisons) ---
         function renderActivitiesGrid() {
             const tbody = document.getElementById('spreadsheet-tbody');
             const filtered = getFilteredActivities();
@@ -1308,7 +1381,7 @@
                 // 1. Strategic Direction Banner Header Row
                 htmlContent += `
                     <tr class="bg-[#1e293b] text-white border-y border-slate-300 font-extrabold">
-                        <td colspan="13" class="py-3 px-4 text-[11px] leading-relaxed text-left">
+                        <td colspan="14" class="py-3 px-4 text-[11px] leading-relaxed text-left">
                             <span class="bg-teal-600 text-white text-[9px] px-2 py-0.5 rounded mr-2 font-bold uppercase tracking-wider">ទិសដៅយុទ្ធសាស្ត្រ ${sd.id}</span>
                             ${sd.title}
                         </td>
@@ -1324,7 +1397,7 @@
                         // 2. Render Key Measure Header Row
                         htmlContent += `
                             <tr class="bg-amber-50 text-slate-800 border-b border-slate-300 italic font-bold">
-                                <td colspan="13" class="py-2.5 px-6 text-[11px] leading-relaxed text-left border-l-4 border-amber-500">
+                                <td colspan="14" class="py-2.5 px-6 text-[11px] leading-relaxed text-left border-l-4 border-amber-500">
                                     <span class="bg-amber-600 text-white not-italic text-[9px] px-2 py-0.5 rounded mr-2 font-black uppercase">វិធានការគន្លឹះ ${sd.id}.${measureIdx + 1}</span>
                                     ${measure}
                                 </td>
@@ -1343,7 +1416,6 @@
                                                 <span>${act.activityKh}</span>
                                                 <div class="mt-1 flex flex-wrap gap-1">
                                                     <span class="text-[9px] bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-mono font-bold">ID: ${act.id}</span>
-                                                    <span class="text-[9px] bg-sky-50 text-sky-700 px-1.5 py-0.5 rounded font-bold font-mono">ដែនដី៖ ${act.district}</span>
                                                 </div>
                                             </div>
                                         </td>
@@ -1353,9 +1425,14 @@
                                             <span>${act.indicatorKh}</span>
                                         </td>
 
-                                        <!-- Coordinating Department -->
-                                        <td class="py-3 px-3 border-r border-slate-200 align-top text-left font-semibold text-slate-700 text-[10.5px]">
+                                        <!-- Coordinating Department (Now editable) -->
+                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'coordinatingDept', this)" class="py-3 px-3 border-r border-slate-200 align-top text-left font-semibold text-slate-700 text-[10.5px] cursor-pointer hover:bg-teal-50/30">
                                             ${act.coordinatingDept}
+                                        </td>
+
+                                        <!-- Implementing Department (Now editable) -->
+                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'implementingDept', this)" class="py-3 px-3 border-r border-slate-200 align-top text-left font-semibold text-slate-700 text-[10.5px] cursor-pointer hover:bg-teal-50/30">
+                                            ${act.implementingDept || "-"}
                                         </td>
 
                                         <!-- Unit -->
@@ -1373,12 +1450,27 @@
                                             <span>${act.totalTarget}</span>
                                         </td>
 
-                                        <!-- Milestone targets -->
-                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2026', this)" class="py-3 px-0.5 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/30">${act.y2026 || "-"}</td>
-                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2027', this)" class="py-3 px-0.5 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/30">${act.y2027 || "-"}</td>
-                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2028', this)" class="py-3 px-0.5 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/30">${act.y2028 || "-"}</td>
-                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2029', this)" class="py-3 px-0.5 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/30">${act.y2029 || "-"}</td>
-                                        <td ondoubleclick="handleStartInlineEdit('${act.id}', 'y2030', this)" class="py-3 px-0.5 border-r border-slate-200 text-center align-top text-[11px] font-medium text-slate-600 cursor-pointer hover:bg-teal-50/30">${act.y2030 || "-"}</td>
+                                        <!-- Milestone targets: 2026 to 2030 (Rendered stacked to compare Target vs. Actuals smoothly) -->
+                                        ${['2026', '2027', '2028', '2029', '2030'].map(year => {
+                                            const tKey = 'y' + year;
+                                            const aKey = 'actualY' + year;
+                                            const targetVal = act[tKey] || "0";
+                                            const actualVal = act[aKey] || "0";
+                                            const isPlanned = act.status === 'planned';
+
+                                            return `
+                                                <td class="py-2 px-1.5 border-r border-slate-200 text-center align-top text-[11px] hover:bg-teal-50/40">
+                                                    <!-- Target Value -->
+                                                    <div ondoubleclick="handleStartInlineEdit('${act.id}', '${tKey}', this)" class="font-medium text-slate-600 cursor-pointer" title="កែសម្រួលផែនការ">
+                                                        <span class="text-[9px] text-slate-400 font-normal">T:</span> ${targetVal}
+                                                    </div>
+                                                    <!-- Actual Value -->
+                                                    <div ondoubleclick="handleStartInlineEdit('${act.id}', '${aKey}', this)" class="font-bold text-emerald-700 mt-1 cursor-pointer" title="កែសម្រួលលទ្ធផលជាក់ស្តែង">
+                                                        <span class="text-[9px] text-emerald-400 font-normal">A:</span> ${isPlanned ? '<span class="text-slate-300 font-normal">N/A</span>' : actualVal}
+                                                    </div>
+                                                </td>
+                                            `;
+                                        }).join('')}
 
                                         <!-- Estimated cost in Million Riels -->
                                         <td ondoubleclick="handleStartInlineEdit('${act.id}', 'estimatedCostMillionRiels', this)" class="py-3 px-3 border-r border-slate-200 text-right align-top font-extrabold text-teal-800 text-[11px] cursor-pointer hover:bg-teal-50/30 bg-teal-50/10">
@@ -1407,7 +1499,7 @@
                         } else {
                             htmlContent += `
                                 <tr class="bg-slate-50/50">
-                                    <td colspan="13" class="py-3 px-6 text-slate-400 italic text-[10px] text-left">
+                                    <td colspan="14" class="py-3 px-6 text-slate-400 italic text-[10px] text-left">
                                         (មិនទាន់មានសកម្មភាពត្រូវបានបញ្ចូលគាំទ្រវិធានការគន្លឹះនេះនៅឡើយទេ)
                                     </td>
                                 </tr>
@@ -1417,7 +1509,7 @@
                 } else {
                     htmlContent += `
                         <tr class="bg-slate-50/50">
-                            <td colspan="13" class="py-4 text-center text-slate-400 italic text-[11px]">
+                            <td colspan="14" class="py-4 text-center text-slate-400 italic text-[11px]">
                                 (មិនទាន់មានវិធានការគន្លឹះយោងនៅក្នុងយុទ្ធសាស្ត្រនេះឡើយ)
                             </td>
                         </tr>
@@ -1439,12 +1531,14 @@
                 showToast("សូមចូលប្រើប្រាស់ប្រព័ន្ធ (Login) ដើម្បីមានសិទ្ធិកែសម្រួលទិន្នន័យ!", "error");
                 return;
             }
-            if (currentUser.role === 'district' && act.district !== currentUser.district) {
-                showToast(`សិទ្ធិមិនគ្រប់គ្រាន់! លោកអ្នកអាចកែសម្រួលបានតែកិច្ចការក្នុងដែនរដ្ឋបាល ${currentUser.district} ប៉ុណ្ណោះ។`, "error");
-                return;
-            }
             if (currentUser.role === 'department' && act.coordinatingDept !== currentUser.department) {
                 showToast(`សិទ្ធិមិនគ្រប់គ្រាន់! លោកអ្នកអាចកែសម្រួលបានតែគម្រោងដែល ${currentUser.department} ទទួលបន្ទុកប៉ុណ្ណោះ។`, "error");
+                return;
+            }
+
+            // Lock Actual Values if Status is planned
+            if (field.startsWith('actualY') && act.status === 'planned') {
+                showToast("មិនអាចកែសម្រួលជាក់ស្តែងបានទេ! ដោយសារស្ថានភាពអនុវត្តគឺ «បានគ្រោងទុក»។", "error");
                 return;
             }
 
@@ -1454,7 +1548,7 @@
 
             currentEditingCell = { id, field, originalValue: act[field] };
 
-            const currentValue = act[field];
+            const currentValue = act[field] || '';
             const width = cellElement.clientWidth;
             
             cellElement.innerHTML = `
@@ -1499,7 +1593,7 @@
             currentEditingCell = null;
         }
 
-        // --- DASHBOARD ANALYTICS CALCULATION ENGINE ---
+        // --- DASHBOARD ANALYTICS CALCULATION ENGINE (Updated comparison score) ---
         function renderDashboard() {
             const totalCount = activities.length;
             const totalCost = activities.reduce((sum, a) => sum + (parseFloat(a.estimatedCostMillionRiels) || 0), 0);
@@ -1534,29 +1628,27 @@
             document.getElementById('bar-inprogress').style.width = inProgressPercent + "%";
             document.getElementById('bar-planned').style.width = plannedPercent + "%";
 
-            const listContainer = document.getElementById('district-breakdown-list');
-            let maxCostVal = 0;
-            
-            const districtCosts = DISTRICTS.slice(0, 8).map(d => {
-                const cost = activities.filter(a => a.district === d).reduce((s, a) => s + (parseFloat(a.estimatedCostMillionRiels) || 0), 0);
-                if (cost > maxCostVal) maxCostVal = cost;
-                return { name: d, cost };
+            // Calculated aggregate achieved vs planned indicators score
+            let aggregatePlannedSum = 0;
+            let aggregateActualSum = 0;
+
+            activities.forEach(act => {
+                if (act.status !== 'planned') {
+                    // Accumulate target and actual numbers where convertible
+                    ['2026', '2027', '2028', '2029', '2030'].forEach(year => {
+                        const targetNum = parseInt((act['y' + year] || "").replace(/,/g, '')) || 0;
+                        const actualNum = parseInt((act['actualY' + year] || "").replace(/,/g, '')) || 0;
+                        aggregatePlannedSum += targetNum;
+                        aggregateActualSum += actualNum;
+                    });
+                }
             });
 
-            listContainer.innerHTML = districtCosts.map(item => {
-                const barWidth = maxCostVal > 0 ? Math.round((item.cost / maxCostVal) * 100) : 0;
-                return `
-                    <div class="space-y-1">
-                        <div class="flex justify-between text-xs font-semibold text-slate-700">
-                            <span>${item.name}</span>
-                            <span class="font-bold text-teal-800 font-mono">${item.cost.toLocaleString()} លានរៀល</span>
-                        </div>
-                        <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden">
-                            <div class="h-full bg-teal-600" style="width: ${barWidth}%"></div>
-                        </div>
-                    </div>
-                `;
-            }).join('');
+            const comparisonPercent = aggregatePlannedSum > 0 
+                ? Math.min(100, Math.round((aggregateActualSum / aggregatePlannedSum) * 100))
+                : 0;
+
+            document.getElementById('achieved-vs-planned-pct').textContent = comparisonPercent + "%";
         }
 
         // --- DATA ENTRY FORM (WITH DYNAMIC DEPENDENT DROPDOWNS) ---
@@ -1566,11 +1658,11 @@
                 `<option value="${sd.id}">${sd.id} - ${sd.title.substring(0, 80)}...</option>`
             ).join('');
 
-            const formDept = document.getElementById('form-coordinating-dept');
-            formDept.innerHTML = DEPARTMENTS.map(d => `<option value="${d}">${d}</option>`).join('');
+            const formDeptDatalist = document.getElementById('coordinating-dept-list');
+            formDeptDatalist.innerHTML = DEPARTMENTS.map(d => `<option value="${d}">${d}</option>`).join('');
 
-            const formDist = document.getElementById('form-district');
-            formDist.innerHTML = DISTRICTS.map(d => `<option value="${d}">${d}</option>`).join('');
+            const formImpDatalist = document.getElementById('implementing-dept-list');
+            formImpDatalist.innerHTML = DEPARTMENTS.map(d => `<option value="${d}">${d}</option>`).join('');
 
             // Automatically trigger dynamic load of first Strategic Direction Key Measures
             if (strategicDirections.length > 0) {
@@ -1593,23 +1685,37 @@
             ).join('');
         }
 
+        // Toggles visibility/disability of Actual Inputs depending on status selection (image_6199e3.png)
+        function handleFormStatusChange(status) {
+            const actualInputs = document.querySelectorAll('.actual-input-field');
+            if (status === 'planned') {
+                actualInputs.forEach(input => {
+                    input.disabled = true;
+                    input.value = "";
+                    input.placeholder = "N/A";
+                    input.classList.add('bg-slate-100', 'border-slate-200', 'text-slate-400');
+                    input.classList.remove('bg-emerald-50/20', 'border-emerald-300', 'text-emerald-800');
+                });
+            } else {
+                actualInputs.forEach(input => {
+                    input.disabled = false;
+                    input.placeholder = "ជាក់ស្តែង";
+                    input.classList.remove('bg-slate-100', 'border-slate-200', 'text-slate-400');
+                    input.classList.add('bg-emerald-50/20', 'border-emerald-300', 'text-emerald-800');
+                });
+            }
+        }
+
         function renderFormOptions() {
             populateFormSelects();
 
-            const deptSelect = document.getElementById('form-coordinating-dept');
-            const distSelect = document.getElementById('form-district');
+            const deptInput = document.getElementById('form-coordinating-dept');
 
-            if (currentUser.role === 'district') {
-                distSelect.value = currentUser.district;
-                distSelect.disabled = true;
-                deptSelect.disabled = false;
-            } else if (currentUser.role === 'department') {
-                deptSelect.value = currentUser.department;
-                deptSelect.disabled = true;
-                distSelect.disabled = false;
+            if (currentUser.role === 'department') {
+                deptInput.value = currentUser.department;
+                deptInput.disabled = true;
             } else {
-                deptSelect.disabled = false;
-                distSelect.disabled = false;
+                deptInput.disabled = false;
             }
         }
 
@@ -1621,15 +1727,21 @@
             document.getElementById('form-baseline-val').value = '';
             document.getElementById('form-total-target').value = '';
             document.getElementById('form-estimated-cost').value = '';
-            document.getElementById('form-y2026').value = '';
-            document.getElementById('form-y2027').value = '';
-            document.getElementById('form-y2028').value = '';
-            document.getElementById('form-y2029').value = '';
-            document.getElementById('form-y2030').value = '';
-            document.getElementById('form-status').value = 'planned';
+            
+            // Clear Milestones Target & Actual Inputs
+            ['2026', '2027', '2028', '2029', '2030'].forEach(year => {
+                document.getElementById('form-y' + year).value = '';
+                document.getElementById('form-actual-y' + year).value = '';
+            });
+
+            document.getElementById('form-status').value = 'in_progress';
+            handleFormStatusChange('in_progress');
+
             document.getElementById('form-progress-percent').value = '0';
             document.getElementById('range-val-indicator').textContent = '0%';
             document.getElementById('form-responsible-person').value = '';
+            document.getElementById('form-coordinating-dept').value = '';
+            document.getElementById('form-implementing-dept').value = '';
 
             document.getElementById('form-title').innerHTML = `
                 <svg class="w-6 h-6 text-teal-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1649,10 +1761,6 @@
                 showToast("សូមចូលប្រើប្រាស់ប្រព័ន្ធ (Login) ដើម្បីកែសម្រួលលម្អិត!", "error");
                 return;
             }
-            if (currentUser.role === 'district' && act.district !== currentUser.district) {
-                showToast(`សិទ្ធិមិនគ្រប់គ្រាន់! លោកអ្នកអាចកែសម្រួលបានតែកិច្ចការក្នុងដែនរដ្ឋបាល ${currentUser.district} ប៉ុណ្ណោះ។`, "error");
-                return;
-            }
             if (currentUser.role === 'department' && act.coordinatingDept !== currentUser.department) {
                 showToast(`សិទ្ធិមិនគ្រប់គ្រាន់! លោកអ្នកអាចកែសម្រួលបានតែគម្រោងដែល ${currentUser.department} ទទួលបន្ទុកប៉ុណ្ណោះ។`, "error");
                 return;
@@ -1667,19 +1775,21 @@
             document.getElementById('form-activity-kh').value = act.activityKh;
             document.getElementById('form-indicator-kh').value = act.indicatorKh;
             document.getElementById('form-coordinating-dept').value = act.coordinatingDept;
+            document.getElementById('form-implementing-dept').value = act.implementingDept || '';
             document.getElementById('form-unit-kh').value = act.unitKh;
-            document.getElementById('form-district').value = act.district;
             document.getElementById('form-baseline-val').value = act.baselineVal;
             document.getElementById('form-total-target').value = act.totalTarget;
             document.getElementById('form-estimated-cost').value = act.estimatedCostMillionRiels;
             
-            document.getElementById('form-y2026').value = act.y2026;
-            document.getElementById('form-y2027').value = act.y2027;
-            document.getElementById('form-y2028').value = act.y2028;
-            document.getElementById('form-y2029').value = act.y2029;
-            document.getElementById('form-y2030').value = act.y2030;
+            // Populate Milestone Targets & Actuals
+            ['2026', '2027', '2028', '2029', '2030'].forEach(year => {
+                document.getElementById('form-y' + year).value = act['y' + year] || '';
+                document.getElementById('form-actual-y' + year).value = act['actualY' + year] || '';
+            });
 
             document.getElementById('form-status').value = act.status;
+            handleFormStatusChange(act.status);
+
             document.getElementById('form-progress-percent').value = act.progressPercent;
             document.getElementById('range-val-indicator').textContent = act.progressPercent + '%';
             document.getElementById('form-responsible-person').value = act.responsiblePerson;
@@ -1713,17 +1823,22 @@
             const activityKh = document.getElementById('form-activity-kh').value;
             const indicatorKh = document.getElementById('form-indicator-kh').value;
             const coordinatingDept = document.getElementById('form-coordinating-dept').value;
+            const implementingDept = document.getElementById('form-implementing-dept').value;
             const unitKh = document.getElementById('form-unit-kh').value;
-            const district = document.getElementById('form-district').value;
             const baselineVal = document.getElementById('form-baseline-val').value;
             const totalTarget = document.getElementById('form-total-target').value;
             const estimatedCost = parseFloat(document.getElementById('form-estimated-cost').value) || 0;
 
             const y2026 = document.getElementById('form-y2026').value;
+            const actualY2026 = document.getElementById('form-actual-y2026').value;
             const y2027 = document.getElementById('form-y2027').value;
+            const actualY2027 = document.getElementById('form-actual-y2027').value;
             const y2028 = document.getElementById('form-y2028').value;
+            const actualY2028 = document.getElementById('form-actual-y2028').value;
             const y2029 = document.getElementById('form-y2029').value;
+            const actualY2029 = document.getElementById('form-actual-y2029').value;
             const y2030 = document.getElementById('form-y2030').value;
+            const actualY2030 = document.getElementById('form-actual-y2030').value;
 
             const status = document.getElementById('form-status').value;
             const progressPercent = parseInt(document.getElementById('form-progress-percent').value) || 0;
@@ -1738,11 +1853,15 @@
                 activityKh,
                 indicatorKh,
                 coordinatingDept: currentUser.role === 'department' ? currentUser.department : coordinatingDept,
+                implementingDept,
                 unitKh,
-                district: currentUser.role === 'district' ? currentUser.district : district,
                 baselineVal,
                 totalTarget,
-                y2026, y2027, y2028, y2029, y2030,
+                y2026, actualY2026,
+                y2027, actualY2027,
+                y2028, actualY2028,
+                y2029, actualY2029,
+                y2030, actualY2030,
                 estimatedCostMillionRiels: estimatedCost,
                 status,
                 progressPercent,
@@ -1768,10 +1887,6 @@
 
             if (currentUser.role === 'guest') {
                 showToast("សូមចូលប្រើប្រាស់ប្រព័ន្ធជាមុនសិន!", "error");
-                return;
-            }
-            if (currentUser.role === 'district' && act.district !== currentUser.district) {
-                showToast("សិទ្ធិមិនគ្រប់គ្រាន់ក្នុងការលុបគម្រោងរបស់រដ្ឋបាលស្រុកផ្សេង!", "error");
                 return;
             }
             if (currentUser.role === 'department' && act.coordinatingDept !== currentUser.department) {
@@ -2019,13 +2134,13 @@
             });
         }
 
-        // --- STRATEGIC DIRECTIONS AND MUTIPLE KEY MEASURES CONTROLLER ---
+        // --- STRATEGIC DIRECTIONS AND MUTIPLE KEY MEASURES CONTROLLER (Including Inline modifiers) ---
         function renderStrategicDirectionsTable() {
             const tbody = document.getElementById('admin-sds-tbody');
             document.getElementById('admin-sd-total-badge').textContent = strategicDirections.length;
 
             tbody.innerHTML = strategicDirections.map(sd => {
-                // Compile list of multiple key measures with edit & delete options
+                // Compile list of multiple key measures with edit & delete options (image_299619.png)
                 let measuresHtml = '';
                 if (sd.keyMeasures && sd.keyMeasures.length > 0) {
                     measuresHtml = `
@@ -2144,7 +2259,6 @@
             });
         }
 
-        // New helper to escape HTML entities safely
         function escapeHtml(text) {
             return text
                 .replace(/&/g, "&amp;")
@@ -2154,7 +2268,6 @@
                 .replace(/'/g, "&#039;");
         }
 
-        // New inline editor activation for individual key measures
         function handleEditKeyMeasureInline(sdId, index) {
             if (currentUser.role !== 'admin') {
                 showToast("សិទ្ធិត្រូវបានបដិសេធ!", "error");
@@ -2187,7 +2300,6 @@
             input.select();
         }
 
-        // Action to save edits to individual key measures and keep related activities linked
         function saveEditedKeyMeasure(sdId, index) {
             const input = document.getElementById(`km-edit-input-${sdId}-${index}`);
             const newValue = input.value.trim();
@@ -2408,6 +2520,12 @@
 
         // --- EXPORT TO PROFESSIONAL EXCEL FILE FORMAT ---
         function handleExportExcelFile() {
+            if (!currentUser || currentUser.role === 'guest') {
+                showToast("សិទ្ធិត្រូវបានបដិសេធ! សូមចូលប្រើប្រាស់ប្រព័ន្ធ (Login) ជាមុនសិន ទើបអាចទាញយកឯកសារបាន។", "error");
+                handleOpenLoginModal();
+                return;
+            }
+
             showToast("កំពុងរៀបចំ និងទាញយកឯកសារ «ម៉ាទ្រីស(ICPD)_3.xlsx»...", "info");
             
             let xmlString = `
@@ -2446,45 +2564,45 @@
                 </head>
                 <body>
                     <table>
-                        <!-- Columns setup to ensure clean widths -->
                         <colgroup>
                             <col width="350">
                             <col width="350">
                             <col width="220">
+                            <col width="220">
                             <col width="80">
                             <col width="120">
                             <col width="120">
-                            <col width="70">
-                            <col width="70">
-                            <col width="70">
-                            <col width="70">
-                            <col width="70">
+                            <col width="100">
+                            <col width="100">
+                            <col width="100">
+                            <col width="100">
+                            <col width="100">
                             <col width="140">
                             <col width="100">
                         </colgroup>
-                        <tr><td colspan="13" class="title-row">របាយការណ៍ផ្លូវការ៖ ម៉ាទ្រីស(ICPD)_3.xlsx - រដ្ឋបាលខេត្តកំពង់ឆ្នាំង (២០២៤-២០៣០)</td></tr>
+                        <tr><td colspan="14" class="title-row">របាយការណ៍ផ្លូវការ៖ ម៉ាទ្រីស(ICPD)_3.xlsx - រដ្ឋបាលខេត្តកំពង់ឆ្នាំង (២០២៤-២០៣០)</td></tr>
                         <tr class="header-row">
                             <th>សកម្មភាព</th>
                             <th>សូចនាករ</th>
                             <th>ស្ថាប័នសម្របសម្រួល</th>
+                            <th>ស្ថាប័នអនុវត្ត</th>
                             <th>ឯកតា</th>
                             <th>តម្លៃឆ្នាំលើកមុន (២០២៦)</th>
                             <th>សរុបដល់ឆ្នាំ២០៣០</th>
-                            <th>២០២៦</th>
-                            <th>២០២៧</th>
-                            <th>២០២៨</th>
-                            <th>២០២៩</th>
-                            <th>២០៣០</th>
+                            <th>២០២៦ (T / A)</th>
+                            <th>២០២៧ (T / A)</th>
+                            <th>២០២៨ (T / A)</th>
+                            <th>២០២៩ (T / A)</th>
+                            <th>២០៣០ (T / A)</th>
                             <th>តម្លៃប៉ាន់ស្មាន (លានរៀល)</th>
                             <th>ស្ថានភាពអនុវត្ត</th>
                         </tr>
             `;
 
             strategicDirections.forEach(sd => {
-                // Add Beautiful Strategic Direction Banner
                 xmlString += `
                     <tr class="sd-row">
-                        <td colspan="13" style="padding: 8px; font-weight: bold;">${sd.id} - ${sd.title}</td>
+                        <td colspan="14" style="padding: 8px; font-weight: bold;">${sd.id} - ${sd.title}</td>
                     </tr>
                 `;
 
@@ -2492,7 +2610,7 @@
                     sd.keyMeasures.forEach((measure, measureIdx) => {
                         xmlString += `
                             <tr class="km-row">
-                                <td colspan="13" style="padding: 6px; padding-left: 20px; font-weight: bold;">វិធានការគន្លឹះ ${sd.id}.${measureIdx + 1}៖ ${measure}</td>
+                                <td colspan="14" style="padding: 6px; padding-left: 20px; font-weight: bold;">វិធានការគន្លឹះ ${sd.id}.${measureIdx + 1}៖ ${measure}</td>
                             </tr>
                         `;
 
@@ -2503,19 +2621,26 @@
                                 if (act.status === 'in_progress') statusText = "កំពុងដំណើរការ (In Progress)";
                                 if (act.status === 'completed') statusText = "បានបញ្ចប់ (Completed)";
 
+                                const val2026 = `T: ${act.y2026 || "0"} / A: ${act.status === 'planned' ? 'N/A' : (act.actualY2026 || "0")}`;
+                                const val2027 = `T: ${act.y2027 || "0"} / A: ${act.status === 'planned' ? 'N/A' : (act.actualY2027 || "0")}`;
+                                const val2028 = `T: ${act.y2028 || "0"} / A: ${act.status === 'planned' ? 'N/A' : (act.actualY2028 || "0")}`;
+                                const val2029 = `T: ${act.y2029 || "0"} / A: ${act.status === 'planned' ? 'N/A' : (act.actualY2029 || "0")}`;
+                                const val2030 = `T: ${act.y2030 || "0"} / A: ${act.status === 'planned' ? 'N/A' : (act.actualY2030 || "0")}`;
+
                                 xmlString += `
                                     <tr class="data-row">
                                         <td style="font-weight: bold; color: #1e293b;">${act.activityKh}</td>
                                         <td style="color: #475569;">${act.indicatorKh}</td>
                                         <td>${act.coordinatingDept}</td>
+                                        <td>${act.implementingDept || "-"}</td>
                                         <td class="num-col">${act.unitKh}</td>
                                         <td class="num-col">${act.baselineVal || "-"}</td>
                                         <td class="num-col" style="font-weight: bold;">${act.totalTarget}</td>
-                                        <td class="num-col">${act.y2026 || "-"}</td>
-                                        <td class="num-col">${act.y2027 || "-"}</td>
-                                        <td class="num-col">${act.y2028 || "-"}</td>
-                                        <td class="num-col">${act.y2029 || "-"}</td>
-                                        <td class="num-col">${act.y2030 || "-"}</td>
+                                        <td class="num-col" style="color: #047857;">${val2026}</td>
+                                        <td class="num-col" style="color: #047857;">${val2027}</td>
+                                        <td class="num-col" style="color: #047857;">${val2028}</td>
+                                        <td class="num-col" style="color: #047857;">${val2029}</td>
+                                        <td class="num-col" style="color: #047857;">${val2030}</td>
                                         <td class="cost-col">${parseFloat(act.estimatedCostMillionRiels || 0).toLocaleString()}</td>
                                         <td class="status-col">${statusText}</td>
                                     </tr>
