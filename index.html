@@ -496,6 +496,83 @@
 
                 </div>
 
+                <!-- New Comparative Grid Row: Coordinated by Departments vs. Districts -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    
+                    <!-- Comparative Card 1: Projects count and cost comparison -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-5">
+                        <div>
+                            <h3 class="font-extrabold text-slate-800 text-xs uppercase tracking-wider mb-1 border-b border-slate-100 pb-2">
+                                គម្រោងសកម្មភាពបែងចែកតាមប្រភេទស្ថាប័នសម្របសម្រួល
+                            </h3>
+                            <p class="text-[11px] text-slate-500 leading-relaxed">
+                                ការប្រៀបធៀបចំនួនសកម្មភាព និងការវិភាគកញ្ចប់ថវិកាប៉ាន់ស្មានរវាង មន្ទីរ/អង្គភាពជំនាញខេត្ត និង រដ្ឋបាលក្រុង/ស្រុក។
+                            </p>
+                        </div>
+                        
+                        <!-- Comparison Meter Bar -->
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-xs font-bold">
+                                <span class="text-teal-700">មន្ទីរ/អង្គភាពជំនាញ (<span id="pct-coord-dept">0%</span>)</span>
+                                <span class="text-indigo-700">រដ្ឋបាលក្រុង/ស្រុក (<span id="pct-coord-dist">0%</span>)</span>
+                            </div>
+                            <div class="w-full h-4 bg-slate-100 rounded-full overflow-hidden flex">
+                                <div id="bar-coord-dept" class="bg-teal-600 h-full transition-all duration-500" style="width: 50%"></div>
+                                <div id="bar-coord-dist" class="bg-indigo-600 h-full transition-all duration-500" style="width: 50%"></div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            
+                            <!-- Left box: Line Departments -->
+                            <div class="p-4 bg-teal-50/50 rounded-xl border border-teal-100 flex items-center space-x-3">
+                                <div class="p-2.5 bg-teal-100 text-teal-800 rounded-lg">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase">មន្ទីរ/អង្គភាពជំនាញ</span>
+                                    <p class="text-lg font-black text-slate-800"><span id="count-coord-dept">0</span> គម្រោង</p>
+                                    <p class="text-[11px] text-teal-700 font-semibold font-mono">ថវិកា៖ <span id="cost-coord-dept">0</span> លាន</p>
+                                </div>
+                            </div>
+
+                            <!-- Right box: District/Town -->
+                            <div class="p-4 bg-indigo-50/50 rounded-xl border border-indigo-100 flex items-center space-x-3">
+                                <div class="p-2.5 bg-indigo-100 text-indigo-800 rounded-lg">
+                                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase">រដ្ឋបាលក្រុង/ស្រុក</span>
+                                    <p class="text-lg font-black text-slate-800"><span id="count-coord-dist">0</span> គម្រោង</p>
+                                    <p class="text-[11px] text-indigo-700 font-semibold font-mono">ថវិកា៖ <span id="cost-coord-dist">0</span> លាន</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Comparative Card 2: Interactive breakdown of coordinators list -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm space-y-4">
+                        <div>
+                            <h3 class="font-extrabold text-slate-800 text-xs uppercase tracking-wider mb-1 border-b border-slate-100 pb-2">
+                                បញ្ជីសង្ខេបស្ថាប័នសម្របសម្រួល និងចំនួនថវិកា
+                            </h3>
+                            <p class="text-[11px] text-slate-500 leading-relaxed">
+                                បញ្ជីរាយនាមស្ថាប័នសម្របសម្រួលទាំងអស់ដែលមានក្នុងប្រព័ន្ធ និងការវិភាគកញ្ចប់ថវិកាសរុប។
+                            </p>
+                        </div>
+                        <div class="overflow-y-auto max-h-[175px] pr-1 sheet-scrollbar space-y-2" id="coordinating-depts-analysis-list">
+                            <!-- Populated dynamically via renderDashboard() -->
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
             <!-- TAB 3: SMART DATA ENTRY FORM (WITH DYNAMIC DEPENDENT DROPDOWNS & TARGETS COMPARISON) -->
@@ -1730,6 +1807,76 @@
                 });
                 
                 sdBreakdownContainer.innerHTML = sdBreakdownHtml;
+            }
+
+            // NEW: Coordinating Type comparison logic (Line Departments vs. District/Town Administrations)
+            let deptProjCount = 0;
+            let deptTotalCost = 0;
+            let districtProjCount = 0;
+            let districtTotalCost = 0;
+
+            const coordinatorBreakdown = {};
+
+            activities.forEach(act => {
+                const coord = act.coordinatingDept || "មិនទាន់កំណត់";
+                const cost = parseFloat(act.estimatedCostMillionRiels) || 0;
+
+                const isDistrict = coord.includes("ស្រុក") || coord.includes("ក្រុង") || coord.includes("រដ្ឋបាលស្រុក") || coord.includes("រដ្ឋបាលក្រុង");
+                const isProvincialOrDept = coord.includes("មន្ទីរ") || coord.includes("ខេត្ត");
+
+                if (isDistrict && !isProvincialOrDept) {
+                    districtProjCount++;
+                    districtTotalCost += cost;
+                } else {
+                    deptProjCount++;
+                    deptTotalCost += cost;
+                }
+
+                if (!coordinatorBreakdown[coord]) {
+                    coordinatorBreakdown[coord] = { count: 0, cost: 0, isDistrict: isDistrict && !isProvincialOrDept };
+                }
+                coordinatorBreakdown[coord].count++;
+                coordinatorBreakdown[coord].cost += cost;
+            });
+
+            const deptPct = totalCount > 0 ? Math.round((deptProjCount / totalCount) * 100) : 0;
+            const distPct = totalCount > 0 ? Math.round((districtProjCount / totalCount) * 100) : 0;
+
+            document.getElementById('count-coord-dept').textContent = deptProjCount;
+            document.getElementById('cost-coord-dept').textContent = deptTotalCost.toLocaleString();
+            document.getElementById('pct-coord-dept').textContent = deptPct + "%";
+            document.getElementById('bar-coord-dept').style.width = deptPct + "%";
+
+            document.getElementById('count-coord-dist').textContent = districtProjCount;
+            document.getElementById('cost-coord-dist').textContent = districtTotalCost.toLocaleString();
+            document.getElementById('pct-coord-dist').textContent = distPct + "%";
+            document.getElementById('bar-coord-dist').style.width = distPct + "%";
+
+            const deptsListContainer = document.getElementById('coordinating-depts-analysis-list');
+            if (deptsListContainer) {
+                let deptsHtml = '';
+                Object.keys(coordinatorBreakdown).sort((a, b) => coordinatorBreakdown[b].count - coordinatorBreakdown[a].count).forEach(coordName => {
+                    const data = coordinatorBreakdown[coordName];
+                    const badgeClass = data.isDistrict ? 'bg-indigo-50 text-indigo-700 border-indigo-100' : 'bg-teal-50 text-teal-700 border-teal-100';
+                    const badgeText = data.isDistrict ? 'រដ្ឋបាលក្រុង/ស្រុក' : 'មន្ទីរជំនាញ';
+                    deptsHtml += `
+                        <div class="flex justify-between items-center p-2 bg-slate-50 rounded-xl border border-slate-200/50 hover:bg-slate-100/50 transition-all text-[11px]">
+                            <div class="flex items-center space-x-2">
+                                <span class="inline-block px-1.5 py-0.5 rounded text-[9px] font-bold border ${badgeClass}">${badgeText}</span>
+                                <span class="font-bold text-slate-800">${coordName}</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-bold text-slate-900">${data.count} គម្រោង</span>
+                                <span class="text-slate-400 mx-1">•</span>
+                                <span class="font-mono text-teal-700 font-bold">${data.cost.toLocaleString()} លាន</span>
+                            </div>
+                        </div>
+                    `;
+                });
+                if (deptsHtml === '') {
+                    deptsHtml = `<p class="text-center text-slate-400 italic text-[11px] py-4">គ្មានទិន្នន័យដើម្បីវិភាគ</p>`;
+                }
+                deptsListContainer.innerHTML = deptsHtml;
             }
         }
 
